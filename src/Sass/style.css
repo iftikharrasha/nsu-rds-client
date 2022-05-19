@@ -1,0 +1,159 @@
+@font-face {
+  font-family: Raleway;
+  src: url(../Fonts/Raleway.ttf);
+}
+
+@font-face {
+  font-family: Raleway_Italic;
+  src: url(../Fonts/Raleway_Italic.ttf);
+}
+
+@font-face {
+  font-family: Raleway_Light;
+  src: url(../Fonts/Raleway_Light.ttf);
+}
+
+:root {
+  --primary: #121212;
+  --accent: #F9F5EF;
+  --secondary: #F4DD1E;
+}
+
+.footer .copyright {
+  padding: 7rem 0 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .copyright a {
+  color: var(--secondary);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 375.5px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 575.98px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1531.98px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: "Raleway", "san-serif";
+  background-color: #FFFFFF;
+  color: var(--primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 0.1875rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.625rem;
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--secondary);
+}
+
+.App {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-exit-active {
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a, select, input, textarea, button {
+  outline: none !important;
+}
+
+.btn:focus, .btn.focus, .form-control:focus {
+  outline: 0 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-link:focus, .btn-link.focus {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

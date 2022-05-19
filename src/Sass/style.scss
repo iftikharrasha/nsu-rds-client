@@ -1,0 +1,109 @@
+@import './variables';
+@import './header';
+@import './hero';
+@import './footer';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    @media (max-width: 375.5px) {
+        font-size: 8px;
+    }
+    @media (min-width: 376px) and (max-width: 575.98px) {
+        font-size: 10px;
+    }
+    @media (min-width: 576px) and (max-width: 1531.98px) {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: $ff1;
+    background-color: #FFFFFF;
+    color: $primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+width: 0.1875rem;
+}
+
+::-webkit-scrollbar-track {
+-webkit-border-radius: 0.625rem;
+border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 0.625rem;
+border-radius: 0.625rem;
+background: $secondary;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: $secondary;
+}
+
+.App{
+    position:relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.fade-enter{
+    opacity: 0;
+}
+.fade-exit{
+    opacity: 1;
+}
+.fade-enter-active{
+    opacity: 1;
+}
+.fade-exit-active{
+    opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active{
+    transition: opacity 400ms;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin:0;
+	padding:0;
+    font-weight: 500;
+}
+
+ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+a{
+	margin:0;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+a, select , input , textarea , button{
+	outline: none !important;
+}
+
+.btn:focus, .btn.focus, .form-control:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.btn-link:focus, .btn-link.focus {
+    text-decoration: none;
+}

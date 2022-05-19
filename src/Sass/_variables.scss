@@ -1,0 +1,34 @@
+@font-face {
+    font-family: Raleway;
+    src: url(../Fonts/Raleway.ttf);
+}
+
+@font-face {
+    font-family: Raleway_Italic;
+    src: url(../Fonts/Raleway_Italic.ttf);
+}
+
+@font-face {
+    font-family: Raleway_Light;
+    src: url(../Fonts/Raleway_Light.ttf);
+}
+  
+:root {
+    --primary: #121212;
+    --accent: #F9F5EF;
+    --secondary: #F4DD1E;
+}
+
+$primary: var(--primary);
+$accent: var(--accent);
+$secondary: var(--secondary);
+$ff1: 'Raleway', 'san-serif';
+$ff2: 'Raleway_Italic', 'san-serif';
+$ff3: 'Raleway_Light', 'san-serif';
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
