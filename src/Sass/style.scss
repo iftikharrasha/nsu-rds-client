@@ -26,7 +26,7 @@ html {
 body {
     font-family: $ff1;
     background-color: #FFFFFF;
-    color: $primary;
+    color: $darkblue;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all 0.3s ease-in-out;
@@ -44,10 +44,10 @@ border-radius: 0.625rem;
 ::-webkit-scrollbar-thumb {
 -webkit-border-radius: 0.625rem;
 border-radius: 0.625rem;
-background: $secondary;
+background: $yellow;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-background: $secondary;
+background: $yellow;
 }
 
 .App{
@@ -106,4 +106,17 @@ a, select , input , textarea , button{
 
 .btn-link:focus, .btn-link.focus {
     text-decoration: none;
+}
+
+.wrapper {
+  @media (min-width: 1300px){
+      max-width: 95rem;
+      margin: 0 auto;
+  }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+      max-width: 720px;
+  }
+  @media (min-width: 1200px) and (max-width: 1299.98px) {
+      max-width: 960px;
+  }
 }

@@ -1,34 +1,28 @@
-@font-face {
-    font-family: Raleway;
-    src: url(../Fonts/Raleway.ttf);
-}
-
-@font-face {
-    font-family: Raleway_Italic;
-    src: url(../Fonts/Raleway_Italic.ttf);
-}
-
-@font-face {
-    font-family: Raleway_Light;
-    src: url(../Fonts/Raleway_Light.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
   
 :root {
-    --primary: #121212;
-    --accent: #F9F5EF;
-    --secondary: #F4DD1E;
+    --white: #ffffff;
+    --darkblue: #343968;
+    --lagoon: #F9F5EF;
+    --yellow: #F0AF4E;
+    --blue: #537FE5;
+    --red: #E55664;
+    --black: #000000;
 }
 
-$primary: var(--primary);
-$accent: var(--accent);
-$secondary: var(--secondary);
-$ff1: 'Raleway', 'san-serif';
-$ff2: 'Raleway_Italic', 'san-serif';
-$ff3: 'Raleway_Light', 'san-serif';
+$white: var(--white);
+$darkblue: var(--darkblue);
+$lagoon: var(--lagoon);
+$yellow: var(--yellow);
+$blue: var(--blue);
+$red: var(--red);
+$black: var(--black);
+
+$ff1: 'Poppins', sans-serif;
 
 @mixin flexCenter {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
   

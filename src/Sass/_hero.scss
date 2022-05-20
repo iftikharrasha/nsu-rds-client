@@ -1,3 +1,201 @@
 .hero{
+    .wrapper{
+        @include flexCenter;
+        .filter__items{
+            .filter__logo{
+                img{
+
+                }
+                ul{
+                    @include flexCenter;
+                    li{
+                        i{
+
+                        }
+                        input{
+
+                        }
+                    }
+                }
+            }
+            .filter__lists{
+                h2{
+
+                }
+                .filter__accordian{
+
+                }
+            }
+        }
+        .inside__items{
+            .inside__nav{
+                nav{
+                    @include flexCenter;
+                    ul{
+                        @include flexCenter;
+                        li{
+                            a{
+
+                            }
+                        }
+                    }
+                    a{
+
+                    }
+                }
+            }
+            .inside__stats{
+                @include flexCenter;
+                ul{
+                    @include flexCenter;
+                    li{
+                        i{
+
+                        }
+                        p{
+
+                        }
+                    }
+                }
+            }
+            .inside__courses{
+                h2{
+
+                }
+                ul{
+                    @include flexCenter;
+                    li{
+                        p{
+
+                        }
+                        select{
+                            
+                        }
+                    }
+                }
+                .inside__cards{
+                    @include flexCenter;
+                    .single__card{
+                        border: 1px solid $blue;
+                        padding: 30px;
+                        .card__top{
+                            .course__name{
+                                h3{
+
+                                }
+                                p{
+
+                                }
+                            }
+                            h6{
+                                
+                            }
+                        }
+                        .card-bottom{
+                            .course__progress{
+                                .progress__details{
+                                    h4{
+
+                                    }
+                                    p{
+
+                                    }
+                                }
+                                .progress__bar{
+                                    .progress__inner{
+                                    }
+                                }
+                            }
+                            .course__button{
+                                button{
+                                    a{
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .details__item{
+            .details__user{
+                @include flexCenter;
+                img{
+
+                }
+                .user__info{
+                    h3{
+
+                    }
+                    p{
+
+                    }
+                }
+            }
+            .details__timer{
+                h2{
+
+                }
+                .timer__bg{
+                    @include flexCenter;
+                    border: 1px solid $blue;
+                    padding: 30px;
+                    h4{
+
+                    }
+                    span{
+
+                    }
+                }
+            }
+            .details__enrolled{
+                .enrolled__cards{
+                    .single__card{
+                        @include flexCenter;
+                        border: 1px solid $blue;
+                        padding: 30px;
+                        .card__left{
+                            .course__name{
+                                h3{
+
+                                }
+                                p{
+
+                                }
+                            }
+                        }
+                        .card__right{
+                            h6{
+
+                            }
+                            .card__icons{
+                                i{
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .details__balance{
+                .balance__card{
+                    border: 1px solid $blue;
+                    padding: 30px;
+                    h2{
+
+                    }
+                    p{
+
+                    }
+                    .balance__buttons{
+                        button{
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
   
