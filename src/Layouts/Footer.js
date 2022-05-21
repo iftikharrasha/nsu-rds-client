@@ -6,7 +6,7 @@ const Footer = () => {
             <footer className="footer">
                 <div className="wrapper">
                     <div className="copyright">
-                        <p className="lit--18">Developed by | <a href="https://iftikhar-rasha.web.app/" target="_blank" rel="noopener noreferrer">Iftikhar Rasha</a></p>
+                        <p>Developed by | <a href="https://iftikhar-rasha.web.app/" target="_blank" rel="noopener noreferrer">Iftikhar Rasha</a></p>
                     </div>
                 </div>
             </footer>

@@ -8,12 +8,20 @@
                 }
                 ul{
                     @include flexCenter;
+                    margin: 2rem 0;
                     li{
+                        border-right: 1px solid #ccc;
+                        padding-right: 1rem;
                         i{
 
                         }
                         input{
-
+                            font-size: 0.75rem;
+                            padding: 0.125rem 0.25rem;
+                        }
+                        &:last-child{
+                            border-right: none;
+                            padding-right: 0;
                         }
                     }
                 }
@@ -28,6 +36,9 @@
             }
         }
         .inside__items{
+            border: 1px solid $blue;
+            width: 55%;
+            padding: 30px;
             .inside__nav{
                 nav{
                     @include flexCenter;
@@ -76,6 +87,7 @@
                 .inside__cards{
                     @include flexCenter;
                     .single__card{
+                        @include flexCenter;
                         border: 1px solid $blue;
                         padding: 30px;
                         .card__top{

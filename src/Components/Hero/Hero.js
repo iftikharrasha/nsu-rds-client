@@ -3,6 +3,7 @@ import { Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Image/logo.png';
 import avatar from '../../Image/avatar.png';
+import search from '../../Image/search-icon.svg';
 
 const Hero = () => {
         return (
@@ -15,7 +16,7 @@ const Hero = () => {
                                         <img src={logo} alt="logo" />
                                     </Link>
                                     <ul>
-                                        <li><i className="fa fa-search"></i></li>
+                                        <li><img src={search} alt={search} /></li>
                                         <li>
                                             <input type="text" placeholder="Search"/>
                                         </li>
@@ -51,8 +52,8 @@ const Hero = () => {
                                 <div className="inside__nav">
                                     <nav>
                                         <ul>
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">About</a></li>
+                                            <li><Link to="/">Home</Link></li>
+                                            <li><Link to="/">About</Link></li>
                                         </ul>
                                         <Link to="/">Logout</Link>
                                     </nav>
