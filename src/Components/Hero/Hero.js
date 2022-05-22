@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Image/logo.png';
@@ -7,16 +7,82 @@ import search from '../../Image/search-icon.svg';
 import trash from '../../Image/trash.svg';
 
 const Hero = () => {
+        const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+        console.log('Width: ', window.innerWidth);
+
+        useEffect(() => {
+          function handleResize() {
+            setWindowWidth(window.innerWidth);
+            // console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
+         }
+      
+          window.addEventListener('resize', handleResize)
+        }, [])
+
+        const activeToggle = e => {
+            document.getElementById('hero').classList.toggle('nav__open');
+            e.preventDefault();
+        }
+
         return (
                 <>
-                    <section className="hero">
+                    <section className="hero" id="hero">
                         <div className="wrapper">
+                            <a className="nav__toggle" href="/" onClick={activeToggle}>
+                                <span className="top"></span>
+                                <span className="mid"></span>
+                                <span className="bot"></span>
+                            </a>
                             <div className="filter__items">
+
+                                {
+                                    windowWidth < 575.98 ? 
+                                    <>
+                                        <div className="inside__nav">
+                                            <nav>
+                                                <ul>
+                                                    <li>
+                                                        <Link to="/">Home</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to="/">Advising Window</Link>
+                                                    </li>
+                                                </ul>
+                                                <Link to="/">Logout</Link>
+                                            </nav>
+                                        </div>
+                                        <div className="inside__stats">
+                                            <ul>
+                                                <li><i className="fa fa-search"></i></li>
+                                                <li>
+                                                    <p>69 Credits Completed</p>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li><i className="fa fa-search"></i></li>
+                                                <li>
+                                                    <p>CGPA: 3.01</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </> : ''
+                                }
+
                                 <div className="filter__logo">
                                     <Link to="/home">
                                         <img src={logo} alt="logo" />
                                     </Link>
+                                    {
+                                        windowWidth < 575.98 ? 
+                                        <div className="details__timer">
+                                            <div className="timer__bg">
+                                                <h4>3:05</h4>
+                                                <span>minutes left</span>
+                                            </div>
+                                        </div> : ''
+                                    }
                                 </div>
+
                                 <div className="filter__lists">
                                     <h2>Filter</h2>
                                     <ul className="filter__ul">
@@ -66,31 +132,31 @@ const Hero = () => {
                                                 </Accordion.Body>
                                             </Accordion.Item>
                                             <Accordion.Item eventKey="2">
-                                                <Accordion.Header>Time</Accordion.Header>
+                                                <Accordion.Header>Preferred Time</Accordion.Header>
                                                 <Accordion.Body>
                                                     <div className="course">
                                                         <input type="checkbox" id="time1" name="time1" value="time1"/>
-                                                        <label htmlFor="time1" className="ps-2">8:00 - 9:30</label>
+                                                        <label htmlFor="time1" className="ps-2">8:00 AM - 9:30 AM</label>
                                                     </div>
                                                     <div className="course">
                                                         <input type="checkbox" id="time2" name="time2" value="time2"/>
-                                                        <label htmlFor="time2" className="ps-2">9:40 - 11:10</label>
+                                                        <label htmlFor="time2" className="ps-2">9:40 AM - 11:10 AM</label>
                                                     </div>
                                                     <div className="course">
                                                         <input type="checkbox" id="time3" name="time3" value="time3"/>
-                                                        <label htmlFor="time3" className="ps-2">11:20 - 12:50</label>
+                                                        <label htmlFor="time3" className="ps-2">11:20 AM - 12:50 PM</label>
                                                     </div>
                                                     <div className="course">
                                                         <input type="checkbox" id="time4" name="time4" value="time4"/>
-                                                        <label htmlFor="time4" className="ps-2">1:00 - 2:30</label>
+                                                        <label htmlFor="time4" className="ps-2">1:00 PM - 2:30 PM</label>
                                                     </div>
                                                     <div className="course">
                                                         <input type="checkbox" id="time5" name="time5" value="time5"/>
-                                                        <label htmlFor="time5" className="ps-2">2:40 - 4:10</label>
+                                                        <label htmlFor="time5" className="ps-2">2:40 PM - 4:10 PM</label>
                                                     </div>
                                                     <div className="course">
                                                         <input type="checkbox" id="time6" name="time6" value="time6"/>
-                                                        <label htmlFor="time6" className="ps-2">4:20 - 5:50</label>
+                                                        <label htmlFor="time6" className="ps-2">4:20 PM - 5:50 PM</label>
                                                     </div>
                                                 </Accordion.Body>
                                             </Accordion.Item>
@@ -99,33 +165,40 @@ const Hero = () => {
                                 </div>
                             </div>
                             <div className="inside__items">
-                                <div className="inside__nav">
-                                    <nav>
-                                        <ul>
-                                            <li>
-                                                <Link to="/">Home</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/">Advising Window</Link>
-                                            </li>
-                                        </ul>
-                                        <Link to="/">Logout</Link>
-                                    </nav>
-                                </div>
-                                <div className="inside__stats">
-                                    <ul>
-                                        <li><i className="fa fa-search"></i></li>
-                                        <li>
-                                            <p>69 Credits Completed</p>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li><i className="fa fa-search"></i></li>
-                                        <li>
-                                            <p>CGPA: 3.00</p>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                                {
+                                    windowWidth > 992 ? 
+                                    <>
+                                        <div className="inside__nav">
+                                            <nav>
+                                                <ul>
+                                                    <li>
+                                                        <Link to="/">Home</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to="/">Advising Window</Link>
+                                                    </li>
+                                                </ul>
+                                                <Link to="/">Logout</Link>
+                                            </nav>
+                                        </div>
+                                        <div className="inside__stats">
+                                            <ul>
+                                                <li><i className="fa fa-search"></i></li>
+                                                <li>
+                                                    <p>69 Credits Completed</p>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li><i className="fa fa-search"></i></li>
+                                                <li>
+                                                    <p>CGPA: 3.01</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </> : ''
+                                }
+                                
                                 <div className="inside__courses">
                                     <div className="inside__top">
                                         <h2>Courses</h2>
@@ -134,8 +207,8 @@ const Hero = () => {
                                             <li>
                                                 <select name="" id="">
                                                     <option value="">Seats Available</option>
-                                                    <option value="">Time</option>
-                                                    <option value="">Section</option>
+                                                    <option value="">Time Schedule</option>
+                                                    <option value="">Section Name</option>
                                                 </select>
                                             </li>
                                         </ul>
@@ -485,94 +558,103 @@ const Hero = () => {
                                 </div>
                             </div>
                             <div className="details__item">
-                                <div className="details__user">
-                                    <img src={avatar} alt="avatar" />
-                                    <div className="user__info">
-                                        <h3>Iftikhar Rasha</h3>
-                                        <p>1620221042</p>
-                                    </div>
-                                </div>
-                                <div className="details__timer">
-                                    {/* <h2>Advising Timer</h2> */}
-                                    <div className="timer__bg">
-                                        <h4>3:05</h4>
-                                        <span>minutes left</span>
-                                    </div>
-                                </div>
-                                <div className="details__enrolled">
-                                    <h2>Enrolled Courses</h2>
-                                    <div className="enrolled__cards">
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
-                                                </div>
+                                <div className="details__nav">
+                                    {
+                                        windowWidth > 992 ? 
+                                        <div className="details__user">
+                                            <div className="user__info">
+                                                <h3>Iftikhar Rasha</h3>
+                                                <p>1620221042</p>
                                             </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
-                                                </div>
-                                            </div>
-                                        </div>
+                                            <img src={avatar} alt="avatar" />
+                                        </div> : ''
+                                    }
 
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
-                                                </div>
+                                    {
+                                        windowWidth > 576 ? 
+                                        <div className="details__timer">
+                                            <div className="timer__bg">
+                                                <h4>3:05</h4>
+                                                <span>minutes left</span>
                                             </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> : ''
+                                    }
 
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
+                                    <div className="details__enrolled">
+                                        <h2>Enrolled Courses</h2>
+                                        <div className="enrolled__cards">
+                                            <div className="single__card">
+                                                <div className="card__left">
+                                                    <div className="course__name">
+                                                        <h3>FIN254</h3>
+                                                        <p>MW 8:00 - 9:30</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card__right">
+                                                    <h6>Section 04</h6>
+                                                    <div className="card__icons">
+                                                        <img src={trash} alt={trash} />
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
+
+                                            <div className="single__card">
+                                                <div className="card__left">
+                                                    <div className="course__name">
+                                                        <h3>FIN254</h3>
+                                                        <p>MW 8:00 - 9:30</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card__right">
+                                                    <h6>Section 04</h6>
+                                                    <div className="card__icons">
+                                                        <img src={trash} alt={trash} />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
+
+                                            <div className="single__card">
+                                                <div className="card__left">
+                                                    <div className="course__name">
+                                                        <h3>FIN254</h3>
+                                                        <p>MW 8:00 - 9:30</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card__right">
+                                                    <h6>Section 04</h6>
+                                                    <div className="card__icons">
+                                                        <img src={trash} alt={trash} />
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
+                                            <div className="single__card">
+                                                <div className="card__left">
+                                                    <div className="course__name">
+                                                        <h3>FIN254</h3>
+                                                        <p>MW 8:00 - 9:30</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card__right">
+                                                    <h6>Section 04</h6>
+                                                    <div className="card__icons">
+                                                        <img src={trash} alt={trash} />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="details__balance">
-                                    <div className="balance__card">
-                                        <h2>Total Fees</h2>
-                                        <p>85,500 BDT/-</p>
-                                        <div className="balance__buttons">
-                                            <button>
-                                                <Link to="/">Print Slip</Link>
-                                            </button>
-                                            <button>
-                                                <Link to="/">Details</Link>
-                                            </button>
+                                    <div className="details__balance">
+                                        <div className="balance__card">
+                                            <h2>Total Fees</h2>
+                                            <p>85,500 BDT/-</p>
+                                            <div className="balance__buttons">
+                                                <button>
+                                                    <Link to="/">Print Slip</Link>
+                                                </button>
+                                                <button>
+                                                    <Link to="/">Details</Link>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
