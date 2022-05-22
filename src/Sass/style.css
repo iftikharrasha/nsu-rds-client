@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 :root {
   --white: #ffffff;
-  --darkblue: #242568;
-  --lagoon: #F9F5EF;
+  --darkblue: #111e62;
+  --lagoon: #e7f1ff;
   --yellow: #F0AF4E;
   --blue: #537FE5;
   --red: #E55664;
@@ -19,9 +19,25 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.hero .wrapper .filter__items .filter__logo ul {
+.hero .wrapper .filter__items {
+  width: 16%;
+  margin: 2rem 0;
+}
+
+.hero .wrapper .filter__items .filter__lists {
+  padding-top: 3rem;
+}
+
+.hero .wrapper .filter__items .filter__lists h2 {
+  font-weight: 600;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,31 +47,91 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 2rem 0;
+  padding: 1.5rem 0;
 }
 
-.hero .wrapper .filter__items .filter__logo ul li {
-  border-right: 1px solid #ccc;
-  padding-right: 1rem;
+.hero .wrapper .filter__items .filter__lists .filter__ul li {
+  border-right: 2px solid rgba(0, 0, 0, 0.125);
+  padding-right: 1.25rem;
 }
 
-.hero .wrapper .filter__items .filter__logo ul li input {
-  font-size: 0.75rem;
+.hero .wrapper .filter__items .filter__lists .filter__ul li img {
+  width: 1rem;
+  height: auto;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__ul li input {
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  width: 100%;
+  font-size: 0.85rem;
   padding: 0.125rem 0.25rem;
+  text-transform: uppercase;
 }
 
-.hero .wrapper .filter__items .filter__logo ul li:last-child {
+.hero .wrapper .filter__items .filter__lists .filter__ul li:last-child {
+  width: 75%;
   border-right: none;
   padding-right: 0;
 }
 
+.hero .wrapper .filter__items .filter__lists .filter__accordian .accordion-body {
+  padding-top: 0.5rem;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__accordian button {
+  color: var(--darkblue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  opacity: 0.75;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__accordian button:not(.collapsed) {
+  background-color: #e7f1ff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: 1;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__accordian button:focus {
+  border-color: none;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
+          box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__accordian button:after {
+  width: 1rem;
+  height: 1rem;
+  background-image: url(../Image/arrow.svg);
+  background-size: 1rem;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__accordian .course {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75rem 0;
+}
+
+.hero .wrapper .filter__items .filter__lists .filter__accordian .course label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 .hero .wrapper .inside__items {
-  border: 1px solid var(--blue);
-  width: 55%;
-  padding: 30px;
+  margin: 2rem 0;
+  width: 64%;
 }
 
 .hero .wrapper .inside__items .inside__nav nav {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--blue);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,7 +155,12 @@
           justify-content: space-between;
 }
 
+.hero .wrapper .inside__items .inside__nav nav ul li {
+  margin-right: 2rem;
+}
+
 .hero .wrapper .inside__items .inside__stats {
+  padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,7 +184,16 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__courses ul {
+.hero .wrapper .inside__items .inside__stats ul li p {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.hero .wrapper .inside__items .inside__courses {
+  padding-top: 1rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,6 +203,48 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__top h2 {
+  font-weight: 600;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__top ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--blue);
+  margin-right: 1%;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__top ul li {
+  border-right: 2px solid rgba(0, 0, 0, 0.125);
+  padding-right: 1.25rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: gray;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__top ul li select {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 100%;
+  padding: 0.125rem 0.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__top ul li:last-child {
+  border-right: none;
+  padding-right: 0;
+  padding-left: 1.25rem;
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards {
@@ -125,9 +257,24 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 1.5rem;
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1.5rem;
+  width: 24%;
+  margin-right: 1%;
+  border-radius: 0.5rem;
+  margin-bottom: 1%;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,8 +284,100 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid var(--blue);
-  padding: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name h3 {
+  color: var(--darkblue);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top h6 {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--darkblue);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom {
+  padding-top: 1rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--yellow);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details p {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a button {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--darkblue);
+  color: var(--white);
+  min-width: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a:last-child button {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--darkblue);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a:last-child button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.hero .wrapper .details__item {
+  margin: 2rem 0;
+  width: 16%;
 }
 
 .hero .wrapper .details__item .details__user {
@@ -151,9 +390,41 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 70%;
+  margin-left: auto;
+}
+
+.hero .wrapper .details__item .details__user img {
+  width: 2.875rem;
+  height: 2.875rem;
+  border-radius: 5rem;
+}
+
+.hero .wrapper .details__item .details__user .user__info {
+  text-align: right;
+}
+
+.hero .wrapper .details__item .details__user .user__info h3 {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero .wrapper .details__item .details__user .user__info p {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.hero .wrapper .details__item .details__timer {
+  padding-top: 3rem;
+}
+
+.hero .wrapper .details__item .details__timer h2 {
+  font-weight: 600;
 }
 
 .hero .wrapper .details__item .details__timer .timer__bg {
+  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -163,8 +434,29 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid var(--blue);
-  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1.125rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.hero .wrapper .details__item .details__timer .timer__bg h4 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.hero .wrapper .details__item .details__enrolled {
+  padding: 1.5rem 0;
+}
+
+.hero .wrapper .details__item .details__enrolled h2 {
+  font-weight: 600;
+}
+
+.hero .wrapper .details__item .details__enrolled .enrolled__cards {
+  margin-top: 1rem;
 }
 
 .hero .wrapper .details__item .details__enrolled .enrolled__cards .single__card {
@@ -177,13 +469,116 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid var(--blue);
-  padding: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1.5rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero .wrapper .details__item .details__enrolled .enrolled__cards .single__card .card__left .course__name h3 {
+  color: var(--darkblue);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.hero .wrapper .details__item .details__enrolled .enrolled__cards .single__card .card__left .course__name p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.hero .wrapper .details__item .details__enrolled .enrolled__cards .single__card .card__right h6 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--darkblue);
+}
+
+.hero .wrapper .details__item .details__enrolled .enrolled__cards .single__card .card__right .card__icons {
+  text-align: right;
+}
+
+.hero .wrapper .details__item .details__enrolled .enrolled__cards .single__card .card__right .card__icons img {
+  cursor: pointer;
+  width: 1rem;
+  height: auto;
 }
 
 .hero .wrapper .details__item .details__balance .balance__card {
-  border: 1px solid var(--blue);
-  padding: 30px;
+  background-color: var(--blue);
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 1.125rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.hero .wrapper .details__item .details__balance .balance__card h2 {
+  font-size: 1rem;
+}
+
+.hero .wrapper .details__item .details__balance .balance__card p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--lagoon);
+  min-width: 6rem;
+  border: 1px solid white;
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:first-child:hover {
+  background-color: var(--blue);
+  border: 1px solid white;
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:first-child:hover a {
+  color: var(--white);
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:last-child {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--darkblue);
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:last-child a {
+  color: var(--white);
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:last-child:hover {
+  background-color: #e7f1ff;
+  color: var(--blue);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.hero .wrapper .details__item .details__balance .balance__card .balance__buttons button:last-child:hover a {
+  color: var(--blue);
 }
 
 .footer .copyright {
@@ -363,7 +758,7 @@ a, select, input, textarea, button {
 
 @media (min-width: 1300px) {
   .wrapper {
-    max-width: 95rem;
+    max-width: 100rem;
     margin: 0 auto;
   }
 }
