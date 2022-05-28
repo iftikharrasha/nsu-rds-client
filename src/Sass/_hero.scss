@@ -401,6 +401,110 @@
                             }
                         }
                     }
+                    .lazyLoader{
+                        border: 1px solid rgba(0,0,0,.125);
+                        padding: 1.35rem;
+                        width: 24%;
+                        margin-right: 1%;
+                        border-radius: 0.5rem;
+                        margin-bottom: 1%;
+                        @media (max-width: 575.98px) {
+                            width: 48%;
+                            margin-right: 2%;
+                            margin-bottom: 2%;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {
+                            width: 48%;
+                            margin-right: 2%;
+                            margin-bottom: 2%;
+                        }
+                        @media (min-width: 992px) and (max-width: 1199.98px) {
+                            width: 32%;
+                        }
+                        .line{
+                            position: static;
+                            overflow: hidden;
+                            -webkit-animation: lazyLoading 2s linear;
+                            animation: lazyLoading 2s linear;
+                            -webkit-animation-iteration-count: infinite;
+                            animation-iteration-count: infinite;
+                            background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.08)),color-stop(15%,rgba(0,0,0,.15)),color-stop(30%,rgba(0,0,0,.08)));
+                            background-image: -webkit-linear-gradient(left,rgba(0,0,0,.08) 0,rgba(0,0,0,.15) 15%,rgba(0,0,0,.08) 30%);
+                            background-image: linear-gradient(to right,rgba(0,0,0,.08) 0,rgba(0,0,0,.15) 15%,rgba(0,0,0,.08) 30%);
+                            background-size: 1200px 100%;
+                            background-color: $white;
+                        }
+                        .card__top{
+                            padding-bottom: 0.5rem;
+                            .course__name{
+                                .line1{
+                                    width: 6rem;
+                                    height: 1rem;
+                                    margin-bottom: 0.25rem;
+                                }
+                                .line2{
+                                    width: 7rem;
+                                    height: 0.5rem;
+                                }
+                            }
+                            .line1{
+                                width: 4rem;
+                                height: 1rem;
+                                margin-bottom: 0.25rem;
+                            }
+                        }
+                        .card-bottom{
+                            .course__progress{
+                                .progress__details{
+                                    .line1{
+                                        width: 3rem;
+                                        height: 0.75rem;
+                                    }
+                                    .line2{
+                                        width: 6rem;
+                                        height: 0.75rem;
+                                        margin-bottom: 0.25rem;
+                                    }
+                                }
+                                .progress__bar{
+                                    .progress__inner{
+                                    }
+                                }
+                            }
+                            .course__button{
+                                button{
+                                    padding: 0.5rem 1rem;
+                                    border-radius: 0.25rem;
+                                    border: none;
+                                    @media (min-width: 1300px) and (max-width: 1531.98px){
+                                        min-width: 5.5rem;
+                                    }
+                                    @media (min-width: 1532px) {
+                                        min-width: 5.5rem;
+                                    }
+                                    border: 1px solid rgba(0,0,0,0);
+                                    .line1{
+                                        width: 3rem;
+                                        height: 0.75rem;
+                                    }
+                                    .line2{
+                                        width: 6rem;
+                                        height: 0.75rem;
+                                        margin-bottom: 0.25rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @keyframes lazyLoading {
+                        0% {
+                            background-position: -1200px 0;
+                        }
+                        
+                        100% {
+                            background-position: 1200px 0;
+                        }
+                    }
                 }
             }
         }

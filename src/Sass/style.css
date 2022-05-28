@@ -669,6 +669,130 @@
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1.35rem;
+  width: 24%;
+  margin-right: 1%;
+  border-radius: 0.5rem;
+  margin-bottom: 1%;
+}
+
+@media (max-width: 575.98px) {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+    width: 32%;
+  }
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .line {
+  position: static;
+  overflow: hidden;
+  -webkit-animation: lazyLoading 2s linear;
+  animation: lazyLoading 2s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0, 0, 0, 0.08)), color-stop(15%, rgba(0, 0, 0, 0.15)), color-stop(30%, rgba(0, 0, 0, 0.08)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0, rgba(0, 0, 0, 0.15) 15%, rgba(0, 0, 0, 0.08) 30%);
+  background-size: 1200px 100%;
+  background-color: var(--white);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top {
+  padding-bottom: 0.5rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .course__name .line1 {
+  width: 6rem;
+  height: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .course__name .line2 {
+  width: 7rem;
+  height: 0.5rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .line1 {
+  width: 4rem;
+  height: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__progress .progress__details .line1 {
+  width: 3rem;
+  height: 0.75rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__progress .progress__details .line2 {
+  width: 6rem;
+  height: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
+    min-width: 5.5rem;
+  }
+}
+
+@media (min-width: 1532px) {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
+    min-width: 5.5rem;
+  }
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button .line1 {
+  width: 3rem;
+  height: 0.75rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button .line2 {
+  width: 6rem;
+  height: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+@-webkit-keyframes lazyLoading {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+@keyframes lazyLoading {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
 .hero .wrapper .details__item {
   margin: 2rem 0;
   width: 16%;
