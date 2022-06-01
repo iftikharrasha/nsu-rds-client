@@ -23,7 +23,7 @@ const LazyCard = () => {
                                             <div className="line line2"></div>
                                         </div>
                                         <div className="progress__bar">
-                                            <div className="progress__inner">
+                                            <div className="progress__inner line1">
                                                 <hr />
                                             </div>
                                         </div>

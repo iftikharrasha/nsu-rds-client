@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom';
 import logo from '../../Image/logo.png';
 import avatar from '../../Image/avatar.jpg';
 import search from '../../Image/search-icon.svg';
-import trash from '../../Image/trash.svg';
-import fakeData from '../../Data/fakeData.json';
+import fakeData from '../../Data/test.json';
 import Courses from './Courses';
+import EnrolledCourses from './EnrolledCourses';
+import TotalFees from './TotalFees';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Hero = () => {
     const inputEl = useRef("");
     const [courses, setCourses] = useState(fakeData);
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const [enrolledList, setEnrolledList] = useState([]);
+    // console.log(searchTerm);
 
     const triggerRef = useRef(null);
     // const searchHandler = () => {
@@ -30,17 +34,14 @@ const Hero = () => {
     // };
 
     useEffect(() => {
-        console.log('hit')
         if (searchTerm !== "") {
             const newCourseList = courses.filter((Course) => {
-                return ((Course.Course.toLowerCase().includes(searchTerm.toLowerCase())));
+                return ((Course.Course.toLowerCase().includes(searchTerm.toLowerCase())) || (Course.Time.toUpperCase().includes(searchTerm.toUpperCase())));
             });
             setSearchResults(newCourseList);
         } else {
           setSearchResults(courses);
         }
-
-        console.log(searchTerm);
     }, [searchTerm, courses])
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -57,6 +58,45 @@ const Hero = () => {
         document.getElementById('hero').classList.toggle('nav__open');
         e.preventDefault();
     }
+
+    const getChecked = (e) => {
+        if(e.target.checked){
+            setSearchTerm(e.target.value);
+        }else{
+            setSearchTerm('');
+        }
+        // console.log(e.target.value);
+    }
+
+    const handleChange = (slug) => {
+        const loading = toast.loading('Please wait ...');
+        toast.dismiss(loading);
+        const copyCourses = [...courses];
+        const modifiedCourses = copyCourses.map(course => {
+            if(enrolledList.length < 5){
+                if (slug === course.ID) {
+                    course.Checked = !course.Checked;
+                    enrolledList.push(course);
+
+                    toast.dismiss(loading);
+                    toast.success("You've Successfully Enrolled!", {
+                        position: "top-center"
+                    });
+                }
+            }
+        
+          return course;
+        });
+
+        if(enrolledList.length >= 5){
+            toast.dismiss(loading);
+            toast.error("Max course enrollment reached!", {
+                position: "top-center"
+            });
+        }
+    
+        setCourses(modifiedCourses);
+    };
 
     return (
             <>
@@ -110,7 +150,7 @@ const Hero = () => {
                                     windowWidth < 575.98 ? 
                                     <div className="details__timer">
                                         <div className="timer__bg">
-                                            <h4>3:05</h4>
+                                            <h4>05:05</h4>
                                             <span>minutes left</span>
                                         </div>
                                     </div> : ''
@@ -131,20 +171,24 @@ const Hero = () => {
                                             <Accordion.Header>Pre-Advised Courses</Accordion.Header>
                                             <Accordion.Body>
                                                 <div className="course">
-                                                    <input type="checkbox" id="FIN254" name="FIN254" value="FIN254"/>
-                                                    <label htmlFor="FIN254" className="ps-2">FIN254</label>
+                                                    <input type="checkbox" id="CSE438" name="CSE438" value="CSE438" 
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="CSE438" className="ps-2">CSE438</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="BUS105" name="BUS105" value="BUS105"/>
-                                                    <label htmlFor="BUS105" className="ps-2">BUS105</label>
+                                                    <input type="checkbox" id="MAT350" name="MAT350" value="MAT350"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="MAT350" className="ps-2">MAT350</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="MIS210" name="MIS210" value="MIS210"/>
-                                                    <label htmlFor="MIS210" className="ps-2">MIS210</label>
+                                                    <input type="checkbox" id="ENG111" name="ENG111" value="ENG111"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="ENG111" className="ps-2">ENG111</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="HIS101" name="HIS101" value="HIS101"/>
-                                                    <label htmlFor="HIS101" className="ps-2">HIS101</label>
+                                                    <input type="checkbox" id="POL101" name="POL101" value="POL101"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="POL101" className="ps-2">POL101</label>
                                                 </div>
                                             </Accordion.Body>
                                         </Accordion.Item>
@@ -152,15 +196,18 @@ const Hero = () => {
                                             <Accordion.Header>Class Schedule</Accordion.Header>
                                             <Accordion.Body>
                                                 <div className="course">
-                                                    <input type="checkbox" id="mw" name="mw" value="mw"/>
+                                                    <input type="checkbox" id="mw" name="mw" value="mw"
+                                                            onChange={getChecked}/>
                                                     <label htmlFor="mw" className="ps-2">Monday-Wednesday (MW)</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="ra" name="ra" value="ra"/>
+                                                    <input type="checkbox" id="ra" name="ra" value="ra"
+                                                            onChange={getChecked}/>
                                                     <label htmlFor="ra" className="ps-2">Thursday-Saturday (RA)</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="st" name="st" value="st"/>
+                                                    <input type="checkbox" id="st" name="st" value="st"
+                                                            onChange={getChecked}/>
                                                     <label htmlFor="st" className="ps-2">Sunday-Tuesday (ST)</label>
                                                 </div>
                                             </Accordion.Body>
@@ -169,28 +216,34 @@ const Hero = () => {
                                             <Accordion.Header>Preferred Time</Accordion.Header>
                                             <Accordion.Body>
                                                 <div className="course">
-                                                    <input type="checkbox" id="time1" name="time1" value="time1"/>
-                                                    <label htmlFor="time1" className="ps-2">8:00 AM - 9:30 AM</label>
+                                                    <input type="checkbox" id="time1" name="time1" value="08:00 AM - 09:30 AM"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="time1" className="ps-2">08:00 AM - 09:30 AM</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="time2" name="time2" value="time2"/>
-                                                    <label htmlFor="time2" className="ps-2">9:40 AM - 11:10 AM</label>
+                                                    <input type="checkbox" id="time2" name="time2" value="09:40 AM - 11:10 AM"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="time2" className="ps-2">09:40 AM - 11:10 AM</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="time3" name="time3" value="time3"/>
+                                                    <input type="checkbox" id="time3" name="time3" value="11:20 AM - 12:50 PM"
+                                                            onChange={getChecked}/>
                                                     <label htmlFor="time3" className="ps-2">11:20 AM - 12:50 PM</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="time4" name="time4" value="time4"/>
-                                                    <label htmlFor="time4" className="ps-2">1:00 PM - 2:30 PM</label>
+                                                    <input type="checkbox" id="time4" name="time4" value="01:00 PM - 02:30 PM"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="time4" className="ps-2">01:00 PM - 02:30 PM</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="time5" name="time5" value="time5"/>
-                                                    <label htmlFor="time5" className="ps-2">2:40 PM - 4:10 PM</label>
+                                                    <input type="checkbox" id="time5" name="time5" value="02:40 PM - 04:10 PM"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="time5" className="ps-2">02:40 PM - 04:10 PM</label>
                                                 </div>
                                                 <div className="course">
-                                                    <input type="checkbox" id="time6" name="time6" value="time6"/>
-                                                    <label htmlFor="time6" className="ps-2">4:20 PM - 5:50 PM</label>
+                                                    <input type="checkbox" id="time6" name="time6" value="04:20 PM - 05:50 PM"
+                                                            onChange={getChecked}/>
+                                                    <label htmlFor="time6" className="ps-2">04:20 PM - 05:50 PM</label>
                                                 </div>
                                             </Accordion.Body>
                                         </Accordion.Item>
@@ -243,9 +296,10 @@ const Hero = () => {
                                 })
                             } */}
 
-                            <Courses triggerRef={triggerRef} searchResults={searchTerm.length < 1 ? courses : searchResults}/>
+                            <Courses triggerRef={triggerRef} searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleChange={handleChange}/>
 
                         </div>
+
                         <aside className="details__item">
                             <div className="details__nav">
                                 {
@@ -263,93 +317,24 @@ const Hero = () => {
                                     windowWidth > 576 ? 
                                     <div className="details__timer">
                                         <div className="timer__bg">
-                                            <h4>3:05</h4>
+                                            <h4>05:05</h4>
                                             <span>minutes left</span>
                                         </div>
                                     </div> : ''
                                 }
 
-                                <div className="details__enrolled">
-                                    <h2>Enrolled Courses</h2>
-                                    <div className="enrolled__cards">
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
-                                                </div>
-                                            </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
-                                                </div>
-                                            </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
-                                                </div>
-                                            </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="single__card">
-                                            <div className="card__left">
-                                                <div className="course__name">
-                                                    <h3>FIN254</h3>
-                                                    <p>MW 8:00 - 9:30</p>
-                                                </div>
-                                            </div>
-                                            <div className="card__right">
-                                                <h6>Section 04</h6>
-                                                <div className="card__icons">
-                                                    <img src={trash} alt={trash} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="details__balance">
-                                    <div className="balance__card">
-                                        <h2>Total Fees</h2>
-                                        <p>85,500 BDT/-</p>
-                                        <div className="balance__buttons">
-                                            <button>
-                                                <Link to="/">Print Slip</Link>
-                                            </button>
-                                            <button>
-                                                <Link to="/">Details</Link>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <EnrolledCourses enrolledList={enrolledList}/>
+                                
+                                <TotalFees length={enrolledList.length}/>
                             </div>
                         </aside>
                     </div>
                 </section>
+
+                <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+                />
             </>
         );
 };

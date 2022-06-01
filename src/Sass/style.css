@@ -165,6 +165,12 @@
   color: var(--white);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.hero .wrapper .filter__items .filter__logo .details__timer .timer__bg:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .hero .wrapper .filter__items .filter__logo .details__timer .timer__bg h4 {
@@ -526,6 +532,20 @@
   padding-top: 1.5rem;
 }
 
+.hero .wrapper .inside__items .inside__courses .inside__cards .err {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-height: 30rem;
+}
+
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
   border: 1px solid rgba(0, 0, 0, 0.125);
   padding: 1.35rem;
@@ -533,6 +553,7 @@
   margin-right: 1%;
   border-radius: 0.5rem;
   margin-bottom: 1%;
+  cursor: pointer;
 }
 
 @media (max-width: 575.98px) {
@@ -555,6 +576,11 @@
   .hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
     width: 32%;
   }
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top {
@@ -617,6 +643,31 @@
   font-weight: 600;
 }
 
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner {
+  width: 100%;
+  height: 0.25rem;
+  background-color: var(--lagoon);
+  margin: 0.35rem 0 0.75rem 0;
+  position: relative;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner span {
+  width: 35%;
+  position: absolute;
+  height: 0.25rem;
+  left: 0;
+  background-color: var(--yellow);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner hr {
+  background-color: var(--black);
+  height: 0.25rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .line1 {
+  opacity: 0.15;
+}
+
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -629,44 +680,81 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a button {
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 0.25rem;
   border: none;
-  background-color: var(--darkblue);
   color: var(--white);
+  background-color: var(--darkblue);
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
 @media (min-width: 1300px) and (max-width: 1531.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a button {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
     min-width: 5.5rem;
   }
 }
 
 @media (min-width: 1532px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a button {
+  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
     min-width: 5.5rem;
   }
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a button:hover {
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:hover {
   background-color: var(--blue);
   color: var(--white);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a:last-child button {
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:last-child {
   border: 1px solid rgba(0, 0, 0, 0.25);
   background-color: rgba(0, 0, 0, 0);
   color: var(--darkblue);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button a:last-child button:hover {
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:last-child:hover {
   background-color: var(--blue);
   color: var(--white);
   border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled {
+  background: var(--lagoon);
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .progress__bar .progress__inner {
+  background-color: rgba(0, 0, 0, 0.125) !important;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .progress__bar .progress__inner span {
+  background-color: var(--blue) !important;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button {
+  background-color: var(--blue) !important;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button:last-child {
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+  background-color: var(--white) !important;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button:last-child:hover {
+  color: var(--darkblue) !important;
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
@@ -749,7 +837,8 @@
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: none;
-  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
 }
 
 @media (min-width: 1300px) and (max-width: 1531.98px) {
@@ -839,7 +928,7 @@
 @media (max-width: 575.98px) {
   .hero .wrapper .details__item .details__nav {
     width: 60%;
-    background: white;
+    background: var(--white);
     height: 100vh;
     padding: 2rem 1rem;
   }
@@ -861,8 +950,8 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__user img {
-  width: 2.875rem;
-  height: 2.875rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 5rem;
   margin-left: 0.75rem;
 }
@@ -902,13 +991,19 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 1.125rem 2rem;
+  padding: 1.125rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   background-color: var(--red);
   color: var(--white);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.hero .wrapper .details__item .details__nav .details__timer .timer__bg:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .hero .wrapper .details__item .details__nav .details__timer .timer__bg h4 {
@@ -945,12 +1040,18 @@
   padding: 1.5rem 1.25rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 @media (max-width: 320px) {
   .hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card {
     padding: 0.75rem 1.25rem;
   }
+}
+
+.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name h3 {
@@ -988,6 +1089,12 @@
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   color: var(--white);
+  cursor: pointer;
+}
+
+.hero .wrapper .details__item .details__nav .details__balance .balance__card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .hero .wrapper .details__item .details__nav .details__balance .balance__card h2 {
