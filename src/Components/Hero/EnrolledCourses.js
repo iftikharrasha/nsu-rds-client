@@ -1,8 +1,7 @@
 import React from 'react';
 import trash from '../../Image/trash.svg';
 
-const EnrolledCourses = ({enrolledList}) => {
-    console.log("enrolledList:", enrolledList);
+const EnrolledCourses = ({enrolledList, handleRemove}) => {
     return (
         <>
             <div className="details__enrolled">
@@ -22,7 +21,7 @@ const EnrolledCourses = ({enrolledList}) => {
                                 <div className="card__right">
                                     <h6>Section {item.Section}</h6>
                                     <div className="card__icons">
-                                        <img src={trash} alt={trash} />
+                                        <img src={trash} alt={trash} onClick={(e) => handleRemove(item.ID)}/>
                                     </div>
                                 </div>
                             </div>

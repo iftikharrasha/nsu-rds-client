@@ -73,6 +73,7 @@
                         display: none;
                     }
                     h2{
+                        font-family: $ff1;
                         font-weight: 600;
                     }
                     .timer__bg{
@@ -90,12 +91,13 @@
                             transform: scale(1.05);
                         }
                         h4{
+                            font-family: $ff1;
                             font-size: 2.5rem;
                             font-weight: 500;
                             padding-right: 1rem;
                         }
                         span{
-    
+                            font-family: $ff1;
                         }
                     }
                 }
@@ -115,6 +117,7 @@
                         li{
                             margin-right: 2rem;
                             a{
+                                font-family: $ff1;
                                 font-size: 1rem;
                             }
                         }
@@ -131,6 +134,7 @@
                     @include flexCenter;
                     li{
                         p{
+                            font-family: $ff1;
                             font-size: 0.85rem;
                             font-weight: 500;
                         }
@@ -140,6 +144,7 @@
             .filter__lists{
                 padding-top: 3rem;
                 h2{
+                    font-family: $ff1;
                     font-weight: 600;
                 }
                 .filter__ul{
@@ -159,6 +164,7 @@
                             height: auto;
                         }
                         input{
+                            font-family: $ff1;
                             border: 1px solid rgba(255, 255, 255, 0);
                             border-bottom: 1px solid rgba(0,0,0,.125);
                             width: 100%;
@@ -179,6 +185,7 @@
                         padding-top: 0.5rem;
                     }
                     button{
+                        font-family: $ff1;
                         color: $darkblue;
                         font-size: 0.85rem;
                         font-weight: 600;
@@ -206,11 +213,13 @@
                         align-items: center;
                         margin: 0.75rem 0;
                         label{
+                            font-family: $ff1;
                             font-size: 0.75rem;
                             font-weight: 500;
                             cursor: pointer;
                         }
                         input {
+                            font-family: $ff1;
                             cursor: pointer;
                         }
                     }
@@ -240,6 +249,7 @@
                         li{
                             margin-right: 2rem;
                             a{
+                                font-family: $ff1;
                             }
                         }
                     }
@@ -258,6 +268,7 @@
 
                         }
                         p{
+                            font-family: $ff1;
                             font-size: 0.85rem;
                             font-weight: 500;
                         }
@@ -269,6 +280,7 @@
                 .inside__top{
                     @include flexCenter; 
                     h2{
+                        font-family: $ff1;
                         font-weight: 600;
                     }
                     ul{
@@ -284,8 +296,11 @@
                             font-size: 0.75rem;
                             color: gray;
                             p{
+                                font-family: $ff1;
+                                font-family: $ff1;
                             }
                             select{
+                                font-family: $ff1;
                                 border: 1px solid rgba(0,0,0,.125);
                                 width: 100%;
                                 padding: 0.125rem 0.25rem;
@@ -341,17 +356,20 @@
                             align-items: flex-start;
                             .course__name{
                                 h3{
+                                    font-family: $ff1;
                                     color: $darkblue;
                                     font-size: 1.25rem;
                                     font-weight: 600;
                                 }
                                 p{
+                                    font-family: $ff1;
                                     font-size: 0.75rem;
                                     font-weight: 500;
                                     color: gray;
                                 }
                             }
                             h6{
+                                font-family: $ff1;
                                 font-size: 0.7rem;
                                 font-weight: 500;
                                 color: $darkblue;
@@ -363,11 +381,13 @@
                                 .progress__details{
                                     @include flexCenter;
                                     h4{
+                                        font-family: $ff1;
                                         font-size: 0.75rem;
                                         font-weight: 600;
                                         color: $yellow;
                                     }
                                     p{
+                                        font-family: $ff1;
                                         font-size: 0.75rem;
                                         font-weight: 600;
                                     }
@@ -399,6 +419,7 @@
                             .course__button{
                                 @include flexCenter;
                                 button{
+                                    font-family: $ff1;
                                     padding: 0.5rem 1rem;
                                     font-size: 0.75rem;
                                     font-weight: 600;
@@ -613,11 +634,13 @@
                     .user__info{
                         text-align: right;
                         h3{
+                            font-family: $ff1;
                             color: rgba(0,0,0,0.5);
                             font-size: 1rem;
                             font-weight: 500;
                         }
                         p{
+                            font-family: $ff1;
                             font-size: 0.75rem;
                             font-weight: 500;
                         }
@@ -626,6 +649,7 @@
                 .details__timer{
                     padding-top: 3rem; 
                     h2{
+                        font-family: $ff1;
                         font-weight: 600;
                     }
                     .timer__bg{
@@ -643,17 +667,19 @@
                             transform: scale(1.05);
                         }
                         h4{
+                            font-family: $ff1;
                             font-size: 2.5rem;
                             font-weight: 500;
                         }
                         span{
-
+                            font-family: $ff1;
                         }
                     }
                 }
                 .details__enrolled{
                     padding: 1.5rem 0; 
                     h2{
+                        font-family: $ff1;
                         font-weight: 600;
                     }
                     .enrolled__cards{
@@ -675,11 +701,13 @@
                             .card__left{
                                 .course__name{
                                     h3{
+                                        font-family: $ff1;
                                         color: $darkblue;
                                         font-size: 1.25rem;
                                         font-weight: 600;
                                     }
                                     p{
+                                        font-family: $ff1;
                                         font-size: 0.75rem;
                                         font-weight: 600;
                                         color: rgba(0,0,0,0.5);
@@ -688,6 +716,7 @@
                             }
                             .card__right{
                                 h6{
+                                    font-family: $ff1;
                                     font-size: 0.75rem;
                                     font-weight: 500;
                                     color: $darkblue;
@@ -717,9 +746,11 @@
                             transform: scale(1.05);
                         }
                         h2{
+                            font-family: $ff1;
                             font-size: 1rem;
                         }
                         p{
+                            font-family: $ff1;
                             font-size: 1.5rem;
                             font-weight: 500;
                         }
@@ -728,6 +759,7 @@
                             padding-top: 0.75rem;
                             flex-wrap: wrap;
                             button{
+                                font-family: $ff1;
                                 margin: 0.25rem 0;
                                 padding: 0.5rem 1rem;
                                 font-size: 0.85rem;
@@ -788,5 +820,50 @@
         .details__item{
             left: 0 !important;
         }
+    }
+}
+
+.hoveredCard {
+    width: 18rem !important;
+    // box-shadow: 0 1px 3px 0 #6600FF, 0 0 0 1px #6600FF !important;
+    .content{
+        .avatar2{
+            width: 2rem !important;
+        }
+        .header, .meta, .description{
+            position: relative;
+            .svg{
+                display: inline;
+                width: 1.25rem;
+                height: auto;
+                margin-right: 0.25rem;
+            }
+            .svg1{
+                margin-left: 0.5rem;
+                margin-right: 0;
+            }
+        }
+        .header{
+            font-size: 1rem !important;
+        }
+        .meta{
+            font-size: 0.75rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+        button{
+            padding: 0.5rem !important;
+            width: 40% !important;
+            margin: 0.5rem !important;
+            font-family: $ff1;
+            font-size: 0.75rem !important;
+            border: 0;
+            cursor: default;
+            span{
+                font-size: 0.75rem !important;
+            }
+        }
+    }
+    .extra{
+        border-top: 1px solid rgba(0,0,0,1)!important;
     }
 }

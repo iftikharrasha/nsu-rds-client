@@ -18,6 +18,14 @@ const Hero = () => {
     const [enrolledList, setEnrolledList] = useState([]);
     // console.log(searchTerm);
 
+    useEffect(() => {
+        function handleResize() {
+        setWindowWidth(window.innerWidth);
+        }
+    
+        window.addEventListener('resize', handleResize)
+    }, [])
+
     const triggerRef = useRef(null);
     // const searchHandler = () => {
     //     setSearchTerm(inputEl.current.value);
@@ -45,14 +53,6 @@ const Hero = () => {
     }, [searchTerm, courses])
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        function handleResize() {
-        setWindowWidth(window.innerWidth);
-        }
-    
-        window.addEventListener('resize', handleResize)
-    }, [])
 
     const activeToggle = e => {
         document.getElementById('hero').classList.toggle('nav__open');
@@ -97,6 +97,33 @@ const Hero = () => {
     
         setCourses(modifiedCourses);
     };
+
+    const handleRemove = (slug) => {
+        const loading = toast.loading('Please wait ...');
+        toast.dismiss(loading);
+        const copyCourses = [...courses];
+        const modifiedCourses = copyCourses.map(course => {
+            if (slug === course.ID) {
+                course.Checked = !course.Checked;
+
+                toast.dismiss(loading);
+                toast.success("You've Removed the course!", {
+                    position: "top-center"
+                });
+            }
+        
+            return course;
+        });
+        setCourses(modifiedCourses);
+
+        const modifiedEnrolled = enrolledList.filter(course => course.ID !== slug);
+        setEnrolledList(modifiedEnrolled);
+    }
+
+    // const handleReset = () => {
+    //     setEnrolledList([]);
+    //     setCourses(fakeData);
+    // }
 
     return (
             <>
@@ -323,7 +350,7 @@ const Hero = () => {
                                     </div> : ''
                                 }
 
-                                <EnrolledCourses enrolledList={enrolledList}/>
+                                <EnrolledCourses handleRemove={handleRemove} enrolledList={enrolledList}/>
                                 
                                 <TotalFees length={enrolledList.length}/>
                             </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import clsx from "clsx";
 import useLazyLoad from '../../Utilities/Hooks/useLazyLoad';
-import Card from './Card';
+import Card from './CourseCard';
 import LazyCard from './LazyCard';
 
 const Courses = (props) => {

@@ -143,6 +143,7 @@
 }
 
 .hero .wrapper .filter__items .filter__logo .details__timer h2 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -174,9 +175,14 @@
 }
 
 .hero .wrapper .filter__items .filter__logo .details__timer .timer__bg h4 {
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
   padding-right: 1rem;
+}
+
+.hero .wrapper .filter__items .filter__logo .details__timer .timer__bg span {
+  font-family: "Poppins", sans-serif;
 }
 
 .hero .wrapper .filter__items .inside__nav {
@@ -221,6 +227,7 @@
 }
 
 .hero .wrapper .filter__items .inside__nav nav ul li a {
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
 
@@ -256,6 +263,7 @@
 }
 
 .hero .wrapper .filter__items .inside__stats ul li p {
+  font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -265,6 +273,7 @@
 }
 
 .hero .wrapper .filter__items .filter__lists h2 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -304,6 +313,7 @@
 }
 
 .hero .wrapper .filter__items .filter__lists .filter__ul li input {
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgba(255, 255, 255, 0);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   width: 100%;
@@ -324,6 +334,7 @@
 }
 
 .hero .wrapper .filter__items .filter__lists .filter__accordian button {
+  font-family: "Poppins", sans-serif;
   color: var(--darkblue);
   font-size: 0.85rem;
   font-weight: 600;
@@ -363,12 +374,14 @@
 }
 
 .hero .wrapper .filter__items .filter__lists .filter__accordian .course label {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   cursor: pointer;
 }
 
 .hero .wrapper .filter__items .filter__lists .filter__accordian .course input {
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 
@@ -426,6 +439,10 @@
   margin-right: 2rem;
 }
 
+.hero .wrapper .inside__items .inside__nav nav ul li a {
+  font-family: "Poppins", sans-serif;
+}
+
 .hero .wrapper .inside__items .inside__stats {
   padding: 2rem 0;
   display: -webkit-box;
@@ -452,6 +469,7 @@
 }
 
 .hero .wrapper .inside__items .inside__stats ul li p {
+  font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -473,6 +491,7 @@
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__top h2 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -500,7 +519,13 @@
   color: gray;
 }
 
+.hero .wrapper .inside__items .inside__courses .inside__top ul li p {
+  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
 .hero .wrapper .inside__items .inside__courses .inside__top ul li select {
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.125);
   width: 100%;
   padding: 0.125rem 0.25rem;
@@ -599,18 +624,21 @@
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name h3 {
+  font-family: "Poppins", sans-serif;
   color: var(--darkblue);
   font-size: 1.25rem;
   font-weight: 600;
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name p {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: gray;
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top h6 {
+  font-family: "Poppins", sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   color: var(--darkblue);
@@ -633,12 +661,14 @@
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details h4 {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--yellow);
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details p {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -681,6 +711,7 @@
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
+  font-family: "Poppins", sans-serif;
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -961,12 +992,14 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__user .user__info h3 {
+  font-family: "Poppins", sans-serif;
   color: rgba(0, 0, 0, 0.5);
   font-size: 1rem;
   font-weight: 500;
 }
 
 .hero .wrapper .details__item .details__nav .details__user .user__info p {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
 }
@@ -976,6 +1009,7 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__timer h2 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -1007,8 +1041,13 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__timer .timer__bg h4 {
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
+}
+
+.hero .wrapper .details__item .details__nav .details__timer .timer__bg span {
+  font-family: "Poppins", sans-serif;
 }
 
 .hero .wrapper .details__item .details__nav .details__enrolled {
@@ -1016,6 +1055,7 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__enrolled h2 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -1055,18 +1095,21 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name h3 {
+  font-family: "Poppins", sans-serif;
   color: var(--darkblue);
   font-size: 1.25rem;
   font-weight: 600;
 }
 
 .hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name p {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
 }
 
 .hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right h6 {
+  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--darkblue);
@@ -1098,10 +1141,12 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__balance .balance__card h2 {
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
 
 .hero .wrapper .details__item .details__nav .details__balance .balance__card p {
+  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -1122,6 +1167,7 @@
 }
 
 .hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button {
+  font-family: "Poppins", sans-serif;
   margin: 0.25rem 0;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
@@ -1182,6 +1228,57 @@
 
 .nav__open .wrapper .details__item {
   left: 0 !important;
+}
+
+.hoveredCard {
+  width: 18rem !important;
+}
+
+.hoveredCard .content .avatar2 {
+  width: 2rem !important;
+}
+
+.hoveredCard .content .header, .hoveredCard .content .meta, .hoveredCard .content .description {
+  position: relative;
+}
+
+.hoveredCard .content .header .svg, .hoveredCard .content .meta .svg, .hoveredCard .content .description .svg {
+  display: inline;
+  width: 1.25rem;
+  height: auto;
+  margin-right: 0.25rem;
+}
+
+.hoveredCard .content .header .svg1, .hoveredCard .content .meta .svg1, .hoveredCard .content .description .svg1 {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.hoveredCard .content .header {
+  font-size: 1rem !important;
+}
+
+.hoveredCard .content .meta {
+  font-size: 0.75rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.hoveredCard .content button {
+  padding: 0.5rem !important;
+  width: 40% !important;
+  margin: 0.5rem !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem !important;
+  border: 0;
+  cursor: default;
+}
+
+.hoveredCard .content button span {
+  font-size: 0.75rem !important;
+}
+
+.hoveredCard .extra {
+  border-top: 1px solid black !important;
 }
 
 .footer .copyright {
