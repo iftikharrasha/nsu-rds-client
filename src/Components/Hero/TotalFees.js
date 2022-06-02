@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const TotalFees = ({length}) => {
     const countFees = 16500*length;
-    console.log("countFees:", countFees);
 
     return (
         <>

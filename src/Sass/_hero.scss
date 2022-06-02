@@ -449,6 +449,14 @@
                                         }
                                     }
                                 }
+                                .disabled{
+                                    background-color: $red;
+                                    opacity: 0.5;
+                                    cursor: not-allowed;
+                                    &:hover{
+                                        background-color: $red;
+                                    }
+                                }
                             }
                         }
                     }
@@ -568,6 +576,9 @@
                                         height: 0.75rem;
                                         margin-bottom: 0.25rem;
                                     }
+                                }
+                                .disabled{
+                                    background-color: $red;
                                 }
                             }
                         }

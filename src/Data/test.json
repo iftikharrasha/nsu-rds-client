@@ -6,8 +6,8 @@
         "Faculty": "NNh",
         "Time": "MW 01:00 PM - 02:30 PM",
         "Room": "NAC201",
-        "Enrolled": "13",
-        "Capacity": "35",
+        "Enrolled": 34,
+        "Capacity": 35,
         "Semester": "172",
         "Checked": false
     },
@@ -126,7 +126,7 @@
         "Faculty": "TmM",
         "Time": "MW 11:20 AM - 12:50 PM",
         "Room": "LIB608",
-        "Enrolled": "38",
+        "Enrolled": "37",
         "Capacity": "38",
         "Semester": "172",
         "Checked": false

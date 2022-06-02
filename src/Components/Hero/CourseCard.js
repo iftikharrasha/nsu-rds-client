@@ -30,7 +30,11 @@ const CourseCard = (props) => {
                     <div className="course__progress">
                         <div className="progress__details">
                             <h4>{Enrolled}/{Capacity}</h4>
-                            <p>Seats available</p>
+                            <p>
+                                {
+                                    Enrolled === Capacity ? 'Section Full' : 'Seats available'
+                                }
+                            </p>
                         </div>
                         <div className="progress__bar">
                             <div className="progress__inner">
@@ -41,48 +45,43 @@ const CourseCard = (props) => {
                     <div className="course__button">
                         {
                             Checked ? <button>Enrolled</button>
-                                    : <button onClick={() => handleChange(ID)}>Enroll</button>
+                                    : <button onClick={() => handleChange(ID, Course)} disabled={Enrolled === Capacity} className={Enrolled === Capacity ? "disabled" : null}>Enroll</button>
                         }
-
-                        
-                                                        <Popup 
-                                                            on='click'
-                                                            position="top right"
-                                                            size="tiny"
-                                                            key={ID}
-                                                            trigger={
-                                                                <button>Details</button>
-                                                            }
-                                                        >
-                                                            <Card className="hoveredCard">
-                                                            <Card.Content>
-                                                                <Image
-                                                                floated='right'
-                                                                size='mini'
-                                                                src={Checked ? checkIcon : crossIcon}
-                                                                className="avatar2"
-                                                                />
-                                                                <Card.Header>Course: ACT201</Card.Header>
-                                                                <Card.Meta>Theory of computation</Card.Meta>
-                                                                <Card.Description>
-                                                                <strong>Section:</strong> {Section} | {Time} <br /> <strong>Credit:</strong> 3.0 | <strong>Tuition:</strong> 16500 BDT
-                                                                </Card.Description>
-                                                            </Card.Content>
-                                                            <Card.Content extra>
-                                                                <div className='ui two buttons'>
-                                                                <Button basic color='grey'>
-                                                                    Faculty <br /> <span>TBA</span>
-                                                                </Button>
-                                                                <Button basic color='grey'>
-                                                                    Room <br /> <span>NAC501</span>
-                                                                </Button>
-                                                                </div>
-                                                            </Card.Content>
-                                                            </Card>
-                                                        </Popup>
-                        {/* <Link to="/">
-                            <button>Details</button>
-                        </Link> */}
+                        <Popup 
+                            on='click'
+                            position="top right"
+                            size="tiny"
+                            key={ID}
+                            trigger={
+                                <button>Details</button>
+                            }
+                        >
+                            <Card className="hoveredCard">
+                            <Card.Content>
+                                <Image
+                                floated='right'
+                                size='mini'
+                                src={Checked ? checkIcon : crossIcon}
+                                className="avatar2"
+                                />
+                                <Card.Header>Course: ACT201</Card.Header>
+                                <Card.Meta>Theory of computation</Card.Meta>
+                                <Card.Description>
+                                <strong>Section:</strong> {Section} | {Time} <br /> <strong>Credit:</strong> 3.0 | <strong>Tuition:</strong> 16500 BDT
+                                </Card.Description>
+                            </Card.Content>
+                            <Card.Content extra>
+                                <div className='ui two buttons'>
+                                <Button basic color='grey'>
+                                    Faculty <br /> <span>TBA</span>
+                                </Button>
+                                <Button basic color='grey'>
+                                    Room <br /> <span>NAC501</span>
+                                </Button>
+                                </div>
+                            </Card.Content>
+                            </Card>
+                        </Popup>
                     </div>
                 </div>
             </div>

@@ -68,25 +68,37 @@ const Hero = () => {
         // console.log(e.target.value);
     }
 
-    const handleChange = (slug) => {
+    const handleChange = (id, title) => {
         const loading = toast.loading('Please wait ...');
-        toast.dismiss(loading);
+        const isEnrolled = enrolledList.find(item => item.Course === title);
         const copyCourses = [...courses];
-        const modifiedCourses = copyCourses.map(course => {
-            if(enrolledList.length < 5){
-                if (slug === course.ID) {
-                    course.Checked = !course.Checked;
-                    enrolledList.push(course);
 
-                    toast.dismiss(loading);
-                    toast.success("You've Successfully Enrolled!", {
-                        position: "top-center"
-                    });
+        if(isEnrolled){
+            toast.dismiss(loading);
+            toast.error("Already Enrolled in another section!", {
+                position: "top-center"
+            });
+        }else{
+            const modifiedCourses = copyCourses.map(course => {
+                if(enrolledList.length < 5){
+                    if (id === course.ID) {
+                        course.Checked = !course.Checked;
+                        course.Enrolled = course.Enrolled + 1;
+                        enrolledList.push(course);
+    
+                        toast.dismiss(loading);
+                        toast.success("You've Successfully Enrolled!", {
+                            position: "top-center"
+                        });
+                    }
                 }
-            }
+            
+                return course;
+            });
+    
+            setCourses(modifiedCourses);
+        }
         
-          return course;
-        });
 
         if(enrolledList.length >= 5){
             toast.dismiss(loading);
@@ -94,17 +106,16 @@ const Hero = () => {
                 position: "top-center"
             });
         }
-    
-        setCourses(modifiedCourses);
     };
 
-    const handleRemove = (slug) => {
+    const handleRemove = (id) => {
         const loading = toast.loading('Please wait ...');
         toast.dismiss(loading);
         const copyCourses = [...courses];
         const modifiedCourses = copyCourses.map(course => {
-            if (slug === course.ID) {
+            if (id === course.ID) {
                 course.Checked = !course.Checked;
+                course.Enrolled = course.Enrolled - 1;
 
                 toast.dismiss(loading);
                 toast.success("You've Removed the course!", {
@@ -116,7 +127,7 @@ const Hero = () => {
         });
         setCourses(modifiedCourses);
 
-        const modifiedEnrolled = enrolledList.filter(course => course.ID !== slug);
+        const modifiedEnrolled = enrolledList.filter(course => course.ID !== id);
         setEnrolledList(modifiedEnrolled);
     }
 

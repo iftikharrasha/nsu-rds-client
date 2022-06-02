@@ -26,7 +26,7 @@ const EnrolledCourses = ({enrolledList, handleRemove}) => {
                                 </div>
                             </div>
                         )) : <div className="single__card">
-                                <p>No courses enrolled!</p>
+                                <p>No enrollment yet!</p>
                             </div>
                     }
                 </div>

@@ -751,6 +751,16 @@
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button .disabled {
+  background-color: var(--red);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button .disabled:hover {
+  background-color: var(--red);
+}
+
 .hero .wrapper .inside__items .inside__courses .inside__cards .enrolled {
   background: var(--lagoon);
 }
@@ -893,6 +903,10 @@
   width: 6rem;
   height: 0.75rem;
   margin-bottom: 0.25rem;
+}
+
+.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button .disabled {
+  background-color: var(--red);
 }
 
 @-webkit-keyframes lazyLoading {
