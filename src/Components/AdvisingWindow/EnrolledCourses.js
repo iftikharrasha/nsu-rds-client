@@ -15,7 +15,7 @@ const EnrolledCourses = ({enrolledList, handleRemove}) => {
                                 <div className="card__left">
                                     <div className="course__name">
                                         <h3>{item.Course}</h3>
-                                        <p>MW 8:00 - 9:30</p>
+                                        <p>{item.Time}</p>
                                     </div>
                                 </div>
                                 <div className="card__right">

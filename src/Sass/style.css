@@ -10,7 +10,39 @@
   --black: #121212;
 }
 
-.hero .wrapper {
+@media screen and (max-width: 1299.98px) {
+  .header .sample {
+    display: none;
+  }
+}
+
+.header .sample .ribbon {
+  color: var(--red);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.header .sample .clipPath {
+  color: var(--blue);
+  font-size: 1.25rem;
+  text-align: center;
+  background: linear-gradient(45deg, var(--lagoon) 55%, var(--blue) 100%);
+  padding: 1rem 0.125rem 0.625rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+  width: 2.25rem;
+  min-height: 2.25rem;
+}
+
+.header .sample .clipPath svg {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  fill: var(--blue);
+}
+
+.advisingWindow .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,13 +59,13 @@
 }
 
 @media (max-width: 991.98px) {
-  .hero .wrapper {
+  .advisingWindow .wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
 
-.hero .wrapper .nav__toggle {
+.advisingWindow .wrapper .nav__toggle {
   cursor: pointer;
   position: fixed;
   right: 1.5rem;
@@ -60,12 +92,12 @@
 }
 
 @media (min-width: 576px) {
-  .hero .wrapper .nav__toggle {
+  .advisingWindow .wrapper .nav__toggle {
     display: none;
   }
 }
 
-.hero .wrapper .nav__toggle .top {
+.advisingWindow .wrapper .nav__toggle .top {
   display: block;
   width: 2rem;
   height: 0.15rem;
@@ -75,7 +107,7 @@
   margin-bottom: 0.35rem;
 }
 
-.hero .wrapper .nav__toggle .mid {
+.advisingWindow .wrapper .nav__toggle .mid {
   display: block;
   width: 2rem;
   height: 0.15rem;
@@ -86,7 +118,7 @@
   position: relative;
 }
 
-.hero .wrapper .nav__toggle .bot {
+.advisingWindow .wrapper .nav__toggle .bot {
   display: block;
   width: 2rem;
   height: 0.2rem;
@@ -95,30 +127,30 @@
   transition: all .5s;
 }
 
-.hero .wrapper .nav__toggle .top, .hero .wrapper .nav__toggle .bot {
+.advisingWindow .wrapper .nav__toggle .top, .advisingWindow .wrapper .nav__toggle .bot {
   -webkit-transform-origin: 0.35rem 0.1rem;
           transform-origin: 0.35rem 0.1rem;
 }
 
-.hero .wrapper .filter__items {
+.advisingWindow .wrapper .filter__items {
   width: 16%;
   margin: 2rem 0;
 }
 
 @media (max-width: 991.98px) {
-  .hero .wrapper .filter__items {
+  .advisingWindow .wrapper .filter__items {
     width: 100%;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero .wrapper .filter__items {
+  .advisingWindow .wrapper .filter__items {
     width: 20%;
   }
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .filter__items .filter__logo {
+  .advisingWindow .wrapper .filter__items .filter__logo {
     padding-top: 1.25rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -132,23 +164,23 @@
   }
 }
 
-.hero .wrapper .filter__items .filter__logo img {
+.advisingWindow .wrapper .filter__items .filter__logo img {
   width: 4rem;
   height: auto;
 }
 
 @media (min-width: 576px) {
-  .hero .wrapper .filter__items .filter__logo .details__timer {
+  .advisingWindow .wrapper .filter__items .filter__logo .details__timer {
     display: none;
   }
 }
 
-.hero .wrapper .filter__items .filter__logo .details__timer h2 {
+.advisingWindow .wrapper .filter__items .filter__logo .details__timer h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
-.hero .wrapper .filter__items .filter__logo .details__timer .timer__bg {
+.advisingWindow .wrapper .filter__items .filter__logo .details__timer .timer__bg {
   margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -169,33 +201,33 @@
       flex-wrap: wrap;
 }
 
-.hero .wrapper .filter__items .filter__logo .details__timer .timer__bg:hover {
+.advisingWindow .wrapper .filter__items .filter__logo .details__timer .timer__bg:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.hero .wrapper .filter__items .filter__logo .details__timer .timer__bg h4 {
+.advisingWindow .wrapper .filter__items .filter__logo .details__timer .timer__bg h4 {
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
   padding-right: 1rem;
 }
 
-.hero .wrapper .filter__items .filter__logo .details__timer .timer__bg span {
+.advisingWindow .wrapper .filter__items .filter__logo .details__timer .timer__bg span {
   font-family: "Poppins", sans-serif;
 }
 
-.hero .wrapper .filter__items .inside__nav {
+.advisingWindow .wrapper .filter__items .inside__nav {
   padding: 1rem 0 0 0;
 }
 
 @media (min-width: 576px) {
-  .hero .wrapper .filter__items .inside__nav {
+  .advisingWindow .wrapper .filter__items .inside__nav {
     display: none;
   }
 }
 
-.hero .wrapper .filter__items .inside__nav nav {
+.advisingWindow .wrapper .filter__items .inside__nav nav {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--blue);
@@ -210,7 +242,7 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .filter__items .inside__nav nav ul {
+.advisingWindow .wrapper .filter__items .inside__nav nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,16 +254,33 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .filter__items .inside__nav nav ul li {
+.advisingWindow .wrapper .filter__items .inside__nav nav ul li {
   margin-right: 2rem;
 }
 
-.hero .wrapper .filter__items .inside__nav nav ul li a {
+.advisingWindow .wrapper .filter__items .inside__nav nav ul li a {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
+  color: #4183c4;
 }
 
-.hero .wrapper .filter__items .inside__stats {
+.advisingWindow .wrapper .filter__items .inside__nav nav .breadcrumb a {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.80rem !important;
+}
+
+.advisingWindow .wrapper .filter__items .inside__nav nav .breadcrumb .active {
+  font-size: 0.80rem !important;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500 !important;
+}
+
+.advisingWindow .wrapper .filter__items .inside__nav nav a {
+  font-size: 0.80rem !important;
+  color: #4183c4;
+}
+
+.advisingWindow .wrapper .filter__items .inside__stats {
   padding: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -245,12 +294,12 @@
 }
 
 @media (min-width: 576px) {
-  .hero .wrapper .filter__items .inside__stats {
+  .advisingWindow .wrapper .filter__items .inside__stats {
     display: none;
   }
 }
 
-.hero .wrapper .filter__items .inside__stats ul {
+.advisingWindow .wrapper .filter__items .inside__stats ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,22 +311,22 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .filter__items .inside__stats ul li p {
+.advisingWindow .wrapper .filter__items .inside__stats ul li p {
   font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
 }
 
-.hero .wrapper .filter__items .filter__lists {
+.advisingWindow .wrapper .filter__items .filter__lists {
   padding-top: 3rem;
 }
 
-.hero .wrapper .filter__items .filter__lists h2 {
+.advisingWindow .wrapper .filter__items .filter__lists h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__ul {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,28 +340,28 @@
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .filter__items .filter__lists .filter__ul {
+  .advisingWindow .wrapper .filter__items .filter__lists .filter__ul {
     width: 60%;
   }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .hero .wrapper .filter__items .filter__lists .filter__ul {
+  .advisingWindow .wrapper .filter__items .filter__lists .filter__ul {
     width: 40%;
   }
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__ul li {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__ul li {
   border-right: 2px solid rgba(0, 0, 0, 0.125);
   padding-right: 1.25rem;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__ul li img {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__ul li img {
   width: 1rem;
   height: auto;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__ul li input {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__ul li input {
   font-family: "Poppins", sans-serif;
   border: 1px solid rgba(255, 255, 255, 0);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -323,17 +372,17 @@
   letter-spacing: 0.025rem;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__ul li:last-child {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__ul li:last-child {
   width: 75%;
   border-right: none;
   padding-right: 0;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian .accordion-body {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian .accordion-body {
   padding-top: 0.5rem;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian button {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian button {
   font-family: "Poppins", sans-serif;
   color: var(--darkblue);
   font-size: 0.85rem;
@@ -342,28 +391,28 @@
   opacity: 0.75;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian button:not(.collapsed) {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian button:not(.collapsed) {
   background-color: #e7f1ff;
   -webkit-box-shadow: none;
           box-shadow: none;
   opacity: 1;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian button:focus {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian button:focus {
   border-color: none;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
           box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian button:after {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian button:after {
   width: 1rem;
   height: 1rem;
   background-image: url(../Image/arrow.svg);
   background-size: 1rem;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian .course {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian .course {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,42 +422,42 @@
   margin: 0.75rem 0;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian .course label {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian .course label {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   cursor: pointer;
 }
 
-.hero .wrapper .filter__items .filter__lists .filter__accordian .course input {
+.advisingWindow .wrapper .filter__items .filter__lists .filter__accordian .course input {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 
-.hero .wrapper .inside__items {
+.advisingWindow .wrapper .inside__items {
   margin: 2rem 0;
   width: 64%;
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .inside__items {
+  .advisingWindow .wrapper .inside__items {
     width: 100%;
   }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .hero .wrapper .inside__items {
+  .advisingWindow .wrapper .inside__items {
     width: 63%;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero .wrapper .inside__items {
+  .advisingWindow .wrapper .inside__items {
     width: 54%;
   }
 }
 
-.hero .wrapper .inside__items .inside__nav nav {
+.advisingWindow .wrapper .inside__items .inside__nav nav {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--blue);
@@ -423,7 +472,7 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__nav nav ul {
+.advisingWindow .wrapper .inside__items .inside__nav nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,15 +484,32 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__nav nav ul li {
+.advisingWindow .wrapper .inside__items .inside__nav nav ul li {
   margin-right: 2rem;
 }
 
-.hero .wrapper .inside__items .inside__nav nav ul li a {
+.advisingWindow .wrapper .inside__items .inside__nav nav ul li a {
   font-family: "Poppins", sans-serif;
+  color: #4183c4 !important;
 }
 
-.hero .wrapper .inside__items .inside__stats {
+.advisingWindow .wrapper .inside__items .inside__nav nav .breadcrumb a {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.80rem !important;
+}
+
+.advisingWindow .wrapper .inside__items .inside__nav nav .breadcrumb .active {
+  font-size: 0.80rem !important;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500 !important;
+}
+
+.advisingWindow .wrapper .inside__items .inside__nav nav a {
+  font-size: 0.80rem !important;
+  color: #4183c4;
+}
+
+.advisingWindow .wrapper .inside__items .inside__stats {
   padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,7 +522,7 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__stats ul {
+.advisingWindow .wrapper .inside__items .inside__stats ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,17 +534,17 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__stats ul li p {
+.advisingWindow .wrapper .inside__items .inside__stats ul li p {
   font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
 }
 
-.hero .wrapper .inside__items .inside__courses {
+.advisingWindow .wrapper .inside__items .inside__courses {
   padding-top: 1.5rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,12 +556,12 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top h2 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top ul {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -511,7 +577,7 @@
   margin-right: 1%;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top ul li {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top ul li {
   border-right: 2px solid rgba(0, 0, 0, 0.125);
   padding-right: 1.25rem;
   font-weight: 500;
@@ -519,12 +585,12 @@
   color: gray;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top ul li p {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top ul li p {
   font-family: "Poppins", sans-serif;
   font-family: "Poppins", sans-serif;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top ul li select {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top ul li select {
   font-family: "Poppins", sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.125);
   width: 100%;
@@ -533,13 +599,13 @@
   cursor: pointer;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__top ul li:last-child {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__top ul li:last-child {
   border-right: none;
   padding-right: 0;
   padding-left: 1.25rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -557,7 +623,7 @@
   padding-top: 1.5rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .err {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .err {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -572,7 +638,7 @@
   min-height: 30rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card {
   border: 1px solid rgba(0, 0, 0, 0.125);
   padding: 1.35rem;
   width: 24%;
@@ -582,7 +648,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card {
     width: 48%;
     margin-right: 2%;
     margin-bottom: 2%;
@@ -590,7 +656,7 @@
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card {
     width: 48%;
     margin-right: 2%;
     margin-bottom: 2%;
@@ -598,17 +664,17 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card {
     width: 32%;
   }
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card:hover {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -623,32 +689,32 @@
           align-items: flex-start;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name h3 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name h3 {
   font-family: "Poppins", sans-serif;
   color: var(--darkblue);
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name p {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top .course__name p {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: gray;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top h6 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card__top h6 {
   font-family: "Poppins", sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   color: var(--darkblue);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom {
   padding-top: 1rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -660,20 +726,20 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details h4 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details h4 {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--yellow);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details p {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__details p {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner {
   width: 100%;
   height: 0.25rem;
   background-color: var(--lagoon);
@@ -681,7 +747,7 @@
   position: relative;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner span {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner span {
   width: 35%;
   position: absolute;
   height: 0.25rem;
@@ -689,16 +755,16 @@
   background-color: var(--yellow);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner hr {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .progress__inner hr {
   background-color: var(--black);
   height: 0.25rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .line1 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__progress .progress__bar .line1 {
   opacity: 0.15;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -710,7 +776,7 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
   font-family: "Poppins", sans-serif;
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
@@ -723,57 +789,57 @@
 }
 
 @media (min-width: 1300px) and (max-width: 1531.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
     min-width: 5.5rem;
   }
 }
 
 @media (min-width: 1532px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button {
     min-width: 5.5rem;
   }
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:hover {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:hover {
   background-color: var(--blue);
   color: var(--white);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:last-child {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:last-child {
   border: 1px solid rgba(0, 0, 0, 0.25);
   background-color: rgba(0, 0, 0, 0);
   color: var(--darkblue);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:last-child:hover {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button button:last-child:hover {
   background-color: var(--blue);
   color: var(--white);
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button .disabled {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button .disabled {
   background-color: var(--red);
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button .disabled:hover {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom .course__button .disabled:hover {
   background-color: var(--red);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled {
   background: var(--lagoon);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .progress__bar .progress__inner {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .progress__bar .progress__inner {
   background-color: rgba(0, 0, 0, 0.125) !important;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .progress__bar .progress__inner span {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .progress__bar .progress__inner span {
   background-color: var(--blue) !important;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -785,20 +851,20 @@
           justify-content: space-between;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button {
   background-color: var(--blue) !important;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button:last-child {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button:last-child {
   border: 1px solid rgba(0, 0, 0, 0) !important;
   background-color: var(--white) !important;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button:last-child:hover {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button:last-child:hover {
   color: var(--darkblue) !important;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
   border: 1px solid rgba(0, 0, 0, 0.125);
   padding: 1.35rem;
   width: 24%;
@@ -808,7 +874,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
     width: 48%;
     margin-right: 2%;
     margin-bottom: 2%;
@@ -816,7 +882,7 @@
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
     width: 48%;
     margin-right: 2%;
     margin-bottom: 2%;
@@ -824,12 +890,12 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader {
     width: 32%;
   }
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .line {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .line {
   position: static;
   overflow: hidden;
   -webkit-animation: lazyLoading 2s linear;
@@ -842,39 +908,39 @@
   background-color: var(--white);
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top {
   padding-bottom: 0.5rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .course__name .line1 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .course__name .line1 {
   width: 6rem;
   height: 1rem;
   margin-bottom: 0.25rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .course__name .line2 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .course__name .line2 {
   width: 7rem;
   height: 0.5rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .line1 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card__top .line1 {
   width: 4rem;
   height: 1rem;
   margin-bottom: 0.25rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__progress .progress__details .line1 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__progress .progress__details .line1 {
   width: 3rem;
   height: 0.75rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__progress .progress__details .line2 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__progress .progress__details .line2 {
   width: 6rem;
   height: 0.75rem;
   margin-bottom: 0.25rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: none;
@@ -883,29 +949,29 @@
 }
 
 @media (min-width: 1300px) and (max-width: 1531.98px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
     min-width: 5.5rem;
   }
 }
 
 @media (min-width: 1532px) {
-  .hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
+  .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button {
     min-width: 5.5rem;
   }
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button .line1 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button .line1 {
   width: 3rem;
   height: 0.75rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button .line2 {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button button .line2 {
   width: 6rem;
   height: 0.75rem;
   margin-bottom: 0.25rem;
 }
 
-.hero .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button .disabled {
+.advisingWindow .wrapper .inside__items .inside__courses .inside__cards .lazyLoader .card-bottom .course__button .disabled {
   background-color: var(--red);
 }
 
@@ -927,13 +993,13 @@
   }
 }
 
-.hero .wrapper .details__item {
+.advisingWindow .wrapper .details__item {
   margin: 2rem 0;
   width: 16%;
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .details__item {
+  .advisingWindow .wrapper .details__item {
     width: 100%;
     position: fixed;
     top: 0;
@@ -942,7 +1008,7 @@
     transition: all .5s;
     margin: 0;
   }
-  .hero .wrapper .details__item:after {
+  .advisingWindow .wrapper .details__item:after {
     content: '';
     background-color: var(--black);
     height: 100vh;
@@ -959,19 +1025,19 @@
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .hero .wrapper .details__item {
+  .advisingWindow .wrapper .details__item {
     width: 33%;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero .wrapper .details__item {
+  .advisingWindow .wrapper .details__item {
     width: 20%;
   }
 }
 
 @media (max-width: 575.98px) {
-  .hero .wrapper .details__item .details__nav {
+  .advisingWindow .wrapper .details__item .details__nav {
     width: 60%;
     background: var(--white);
     height: 100vh;
@@ -979,7 +1045,7 @@
   }
 }
 
-.hero .wrapper .details__item .details__nav .details__user {
+.advisingWindow .wrapper .details__item .details__nav .details__user {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -994,40 +1060,40 @@
           justify-content: flex-end;
 }
 
-.hero .wrapper .details__item .details__nav .details__user img {
+.advisingWindow .wrapper .details__item .details__nav .details__user img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 5rem;
   margin-left: 0.75rem;
 }
 
-.hero .wrapper .details__item .details__nav .details__user .user__info {
+.advisingWindow .wrapper .details__item .details__nav .details__user .user__info {
   text-align: right;
 }
 
-.hero .wrapper .details__item .details__nav .details__user .user__info h3 {
+.advisingWindow .wrapper .details__item .details__nav .details__user .user__info h3 {
   font-family: "Poppins", sans-serif;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
-.hero .wrapper .details__item .details__nav .details__user .user__info p {
+.advisingWindow .wrapper .details__item .details__nav .details__user .user__info p {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-.hero .wrapper .details__item .details__nav .details__timer {
+.advisingWindow .wrapper .details__item .details__nav .details__timer {
   padding-top: 3rem;
 }
 
-.hero .wrapper .details__item .details__nav .details__timer h2 {
+.advisingWindow .wrapper .details__item .details__nav .details__timer h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
-.hero .wrapper .details__item .details__nav .details__timer .timer__bg {
+.advisingWindow .wrapper .details__item .details__nav .details__timer .timer__bg {
   margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1048,35 +1114,35 @@
       flex-wrap: wrap;
 }
 
-.hero .wrapper .details__item .details__nav .details__timer .timer__bg:hover {
+.advisingWindow .wrapper .details__item .details__nav .details__timer .timer__bg:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.hero .wrapper .details__item .details__nav .details__timer .timer__bg h4 {
+.advisingWindow .wrapper .details__item .details__nav .details__timer .timer__bg h4 {
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
 }
 
-.hero .wrapper .details__item .details__nav .details__timer .timer__bg span {
+.advisingWindow .wrapper .details__item .details__nav .details__timer .timer__bg span {
   font-family: "Poppins", sans-serif;
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled {
   padding: 1.5rem 0;
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled h2 {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards {
   margin-top: 1rem;
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1096,48 +1162,48 @@
 }
 
 @media (max-width: 320px) {
-  .hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card {
+  .advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card {
     padding: 0.75rem 1.25rem;
   }
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card:hover {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name h3 {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name h3 {
   font-family: "Poppins", sans-serif;
   color: var(--darkblue);
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name p {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__left .course__name p {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right h6 {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right h6 {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--darkblue);
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right .card__icons {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right .card__icons {
   text-align: right;
 }
 
-.hero .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right .card__icons img {
+.advisingWindow .wrapper .details__item .details__nav .details__enrolled .enrolled__cards .single__card .card__right .card__icons img {
   cursor: pointer;
   width: 1rem;
   height: auto;
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card {
   background-color: var(--blue);
   border: 1px solid rgba(0, 0, 0, 0);
   padding: 1.125rem;
@@ -1146,23 +1212,23 @@
   color: var(--white);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card:hover {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card h2 {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card h2 {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card p {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card p {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1177,7 +1243,7 @@
       flex-wrap: wrap;
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button {
   font-family: "Poppins", sans-serif;
   margin: 0.25rem 0;
   padding: 0.5rem 1rem;
@@ -1190,36 +1256,36 @@
   border: 1px solid white;
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:hover {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:hover {
   background-color: var(--blue);
   color: var(--white);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:first-child:hover {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:first-child:hover {
   background-color: var(--blue);
   border: 1px solid white;
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:first-child:hover a {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:first-child:hover a {
   color: var(--white);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child {
   background-color: rgba(0, 0, 0, 0);
   color: var(--darkblue);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child a {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child a {
   color: var(--white);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child:hover {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child:hover {
   background-color: #e7f1ff;
   color: var(--blue);
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-.hero .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child:hover a {
+.advisingWindow .wrapper .details__item .details__nav .details__balance .balance__card .balance__buttons button:last-child:hover a {
   color: var(--blue);
 }
 

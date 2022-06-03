@@ -1,4 +1,4 @@
-.hero{
+.advisingWindow{
     .wrapper{
         @include flexCenter;
         align-items: flex-start;
@@ -118,8 +118,24 @@
                             a{
                                 font-family: $ff1;
                                 font-size: 1rem;
+                                color: #4183c4;
                             }
                         }
+                    }
+                    .breadcrumb{
+                        a{
+                            font-family: $ff1 !important;
+                            font-size: 0.80rem !important;
+                        }
+                        .active {
+                            font-size: 0.80rem !important;
+                            color: rgba(0, 0, 0, 0.5);
+                            font-weight: 500 !important;
+                        }
+                    }
+                    a{
+                        font-size: 0.80rem !important;
+                        color: #4183c4;
                     }
                 }
             }
@@ -249,11 +265,24 @@
                             margin-right: 2rem;
                             a{
                                 font-family: $ff1;
+                                color: #4183c4 !important;
                             }
                         }
                     }
+                    .breadcrumb{
+                        a{
+                            font-family: $ff1 !important;
+                            font-size: 0.80rem !important;
+                        }
+                        .active {
+                            font-size: 0.80rem !important;
+                            color: rgba(0, 0, 0, 0.5);
+                            font-weight: 500 !important;
+                        }
+                    }
                     a{
-
+                        font-size: 0.80rem !important;
+                        color: #4183c4;
                     }
                 }
             }
@@ -646,13 +675,13 @@
                         h3{
                             font-family: $ff1;
                             color: rgba(0,0,0,0.5);
-                            font-size: 1rem;
+                            font-size: 0.95rem;
                             font-weight: 500;
                         }
                         p{
                             font-family: $ff1;
                             font-size: 0.75rem;
-                            font-weight: 500;
+                            font-weight: 600;
                         }
                     }
                 }

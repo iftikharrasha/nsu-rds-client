@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Image, Button, Card, Popup } from "semantic-ui-react";
 import checkIcon from '../../Image/check-icon.svg';
 import crossIcon from '../../Image/cross-icon.svg';
 
 const CourseCard = (props) => {
-    const { ID, Course, Checked, Capacity, Enrolled, Section, Time } = props.item;
+    const { ID, Course, Checked, Capacity, Enrolled, Section, Time, Credit, Title, Faculty, Room } = props.item;
     const { handleEnroll } = props;
     const [percentage, setPercentage] = useState(0);
 
@@ -20,9 +19,9 @@ const CourseCard = (props) => {
                 <div className="card__top">
                     <div className="course__name">
                         <h3>{Course.slice(0, 6)}</h3>
-                        <p>MW 8:00 - 9:30</p>
+                        <p>{Time}</p>
                     </div>
-                    <h6>Section 04</h6>
+                    <h6>Section {Section < 10 ? `0${Section}` : Section}</h6>
                 </div>
                 <div className="card-bottom">
                     <div className="course__progress">
@@ -62,19 +61,19 @@ const CourseCard = (props) => {
                                 src={Checked ? checkIcon : crossIcon}
                                 className="avatar2"
                                 />
-                                <Card.Header>Course: ACT201</Card.Header>
-                                <Card.Meta>Theory of computation</Card.Meta>
+                                <Card.Header>Course: {Course.slice(0, 6)}</Card.Header>
+                                <Card.Meta>{Title}</Card.Meta>
                                 <Card.Description>
-                                <strong>Section:</strong> {Section} | {Time} <br /> <strong>Credit:</strong> 3.0 | <strong>Tuition:</strong> 16500 BDT
+                                <strong>Section:</strong> {Section} | {Time} <br /> <strong>Credit:</strong> {Credit}.0 | <strong>Tuition:</strong> 19500 BDT
                                 </Card.Description>
                             </Card.Content>
                             <Card.Content extra>
                                 <div className='ui two buttons'>
                                 <Button basic color='grey'>
-                                    Faculty <br /> <span>TBA</span>
+                                    Faculty <br /> <span>{Faculty}</span>
                                 </Button>
                                 <Button basic color='grey'>
-                                    Room <br /> <span>NAC501</span>
+                                    Room <br /> <span>{Room}</span>
                                 </Button>
                                 </div>
                             </Card.Content>

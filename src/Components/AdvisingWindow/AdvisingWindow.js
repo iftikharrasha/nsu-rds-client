@@ -1,49 +1,39 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Image/logo.png';
 import avatar from '../../Image/avatar.jpg';
 import search from '../../Image/search-icon.svg';
-import fakeData from '../../Data/allcourses.json';
+import preAdvised from '../../Data/preadvised.json';
 import filter from '../../Data/filter.json';
 import Courses from './Courses';
-import EnrolledCourses from './EnrolledCourses';
 import TotalFees from './TotalFees';
+import EnrolledCourses from './EnrolledCourses';
 import useTimer from '../../Utilities/Hooks/useTimer';
+import { Breadcrumb } from 'semantic-ui-react';
 
-const Hero = () => {
+const AdvisingWindow = () => {
     const {mints, seconds} = useTimer();
-    const inputEl = useRef("");
-    const [courses, setCourses] = useState(fakeData);
+    const [courses, setCourses] = useState(preAdvised);
     const [filterList, setFilterList] = useState(filter);
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [enrolledList, setEnrolledList] = useState([]);
-    // console.log(searchTerm);
+
+    const navigations = [
+        { key: 'Home', content: 'Home', link: true },
+        { key: 'Advising Window', content: 'Advising Window', link: true },
+        { key: 'Phase 1', content: 'Phase 1', link: true },
+        { key: 'Slot 2', content: 'Slot 2', active: true }
+    ]
 
     useEffect(() => {
         function handleResize() {
             setWindowWidth(window.innerWidth);
         }
-    
         window.addEventListener('resize', handleResize)
     }, [])
-
-    const triggerRef = useRef(null);
-    // const searchHandler = () => {
-    //     setSearchTerm(inputEl.current.value);
-
-    //     const searchKey = inputEl.current.value;
-
-    //     const newCourseList = courses.filter(course => {
-    //         if(searchTerm == ""){
-    //             return course;
-    //         }else if(course.Course.toLowerCase().includes(searchTerm.toLowerCase())){
-    //             return course;
-    //         }
-    //     })
-    // };
 
     useEffect(() => {
         if (searchTerm !== "") {
@@ -59,7 +49,7 @@ const Hero = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const activeToggle = e => {
-        document.getElementById('hero').classList.toggle('nav__open');
+        document.getElementById('advisingWindow').classList.toggle('nav__open');
         e.preventDefault();
     }
 
@@ -98,7 +88,7 @@ const Hero = () => {
             });
         }else{
             const modifiedCourses = copyCourses.map(course => {
-                if(enrolledList.length < 5){
+                if(enrolledList.length < 4){
                     if (id === course.ID) {
                         course.Checked = !course.Checked;
                         course.Enrolled = course.Enrolled + 1;
@@ -118,9 +108,10 @@ const Hero = () => {
         }
         
 
-        if(enrolledList.length >= 5){
+        if(enrolledList.length >= 4){
             toast.dismiss(loading);
             toast.error("Max course enrollment reached!", {
+                icon: '⏳',
                 position: "top-center"
             });
         }
@@ -151,7 +142,7 @@ const Hero = () => {
 
     return (
             <>
-                <section className="hero" id="hero">
+                <section className="advisingWindow" id="advisingWindow">
                     <div className="wrapper">
                         <a className="nav__toggle" href="/" onClick={activeToggle}>
                             <span className="top"></span>
@@ -165,14 +156,7 @@ const Hero = () => {
                                 <>
                                     <div className="inside__nav">
                                         <nav>
-                                            <ul>
-                                                <li>
-                                                    <Link to="/">Home</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="/">Advising Window</Link>
-                                                </li>
-                                            </ul>
+                                            <Breadcrumb icon='right angle' sections={navigations} />
                                             <Link to="/">Logout</Link>
                                         </nav>
                                     </div>
@@ -229,7 +213,7 @@ const Hero = () => {
                                 <ul className="filter__ul">
                                     <li><img src={search} alt={search} /></li>
                                     <li>
-                                        <input type="text" placeholder="Search" ref={inputEl} value={searchTerm} onChange={event => setSearchTerm(event.target.value)}/>
+                                        <input type="text" placeholder="Search" value={searchTerm} onChange={event => setSearchTerm(event.target.value)}/>
                                     </li>
                                 </ul>
                                 <div className="filter__accordian">
@@ -305,14 +289,7 @@ const Hero = () => {
                                 <>
                                     <div className="inside__nav">
                                         <nav>
-                                            <ul>
-                                                <li>
-                                                    <Link to="/">Home</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="/">Advising Window</Link>
-                                                </li>
-                                            </ul>
+                                            <Breadcrumb icon='right angle' sections={navigations} />
                                             <Link to="/">Logout</Link>
                                         </nav>
                                     </div>
@@ -320,7 +297,7 @@ const Hero = () => {
                                         <ul>
                                             <li><i className="fa fa-search"></i></li>
                                             <li>
-                                                <p>69 Credits Completed</p>
+                                                <p>118 Credits Completed</p>
                                             </li>
                                         </ul>
                                         <ul>
@@ -332,18 +309,8 @@ const Hero = () => {
                                     </div>
                                 </> : ''
                             }
-                            
-                            {/* {
-                                courses.filter(course => {
-                                    if(searchTerm == ""){
-                                        return course;
-                                    }else if(course.Course.toLowerCase().includes(searchTerm.toLowerCase())){
-                                        return course;
-                                    }
-                                })
-                            } */}
 
-                            <Courses triggerRef={triggerRef} searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleEnroll={handleEnroll}/>
+                            <Courses searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleEnroll={handleEnroll}/>
 
                         </div>
 
@@ -402,4 +369,4 @@ const Hero = () => {
         );
 };
 
-export default Hero;
+export default AdvisingWindow;

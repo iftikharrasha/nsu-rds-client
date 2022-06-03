@@ -9,8 +9,8 @@
     {
         "id": "2",
         "checked": false,
-        "title": "CSE473",
-        "value": "CSE473",
+        "title": "CSE373",
+        "value": "CSE373",
         "type": "course"
     },
     {
@@ -30,8 +30,8 @@
     {
         "id": "5",
         "checked": false,
-        "title": "POL101",
-        "value": "POL101",
+        "title": "HIS101",
+        "value": "HIS101",
         "type": "course"
     },
     {
@@ -59,42 +59,42 @@
         "id": "9",
         "checked": false,
         "title": "08:00 AM - 09:30 AM",
-        "value": "08:00 AM - 09:30 AM",
+        "value": "08:00 - 09:30",
         "type": "time"
     },
     {
         "id": "10",
         "checked": false,
         "title": "09:40 AM - 11:10 AM",
-        "value": "09:40 AM - 11:10 AM",
+        "value": "09:40 - 11:10",
         "type": "time"
     },
     {
         "id": "11",
         "checked": false,
         "title": "11:20 AM - 12:50 PM",
-        "value": "11:20 AM - 12:50 PM",
+        "value": "11:20 - 12:50",
         "type": "time"
     },
     {
         "id": "12",
         "checked": false,
         "title": "01:00 PM - 02:30 PM",
-        "value": "01:00 PM - 02:30 PM",
+        "value": "01:00 - 02:30",
         "type": "time"
     },
     {
         "id": "13",
         "checked": false,
         "title": "02:40 PM - 04:10 PM",
-        "value": "02:40 PM - 04:10 PM",
+        "value": "02:40 - 04:10",
         "type": "time"
     },
     {
         "id": "14",
         "checked": false,
         "title": "04:20 PM - 05:50 PM",
-        "value": "04:20 PM - 05:50 PM",
+        "value": "04:20 - 05:50",
         "type": "time"
     }
 ]

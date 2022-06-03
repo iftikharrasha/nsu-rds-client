@@ -1,12 +1,12 @@
 import React from "react";
-import Hero from "../../Components/Hero/Hero";
+import AdvisingWindow from "../../Components/AdvisingWindow/AdvisingWindow";
 
 const Home = () => {
 
     return (
         <>
             <main>
-                <Hero/>
+                <AdvisingWindow/>
             </main>
         </>
     );
