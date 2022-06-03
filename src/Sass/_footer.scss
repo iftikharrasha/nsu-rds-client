@@ -2,8 +2,17 @@
     .copyright{
         padding:2.5rem 0 2rem 0;
         text-align: center;
-        a{
-            color: $blue;
+        color: $black;
+        text-transform: uppercase;
+        p{
+            svg{
+                width: 10.5625rem;
+                height: auto;
+                fill: $black;
+                &:hover {
+                    fill: $darkblue;
+                }
+            }
         }
     }
 }

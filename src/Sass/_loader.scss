@@ -1,13 +1,15 @@
 .loader{
     @include flexCenter;
-    min-height: 100vh;
+    justify-content: center;
+    min-height: 87vh;
     margin: auto;
     div{
         width: 15rem !important;
         text-align: center;
     }
     h2{
-        color: $white;
-        font-size: 1.5rem;
+        font-family: $ff1;
+        color: $green;
+        font-size: 1rem;
     }
 }

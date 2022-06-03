@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import clsx from "clsx";
 import useLazyLoad from '../../Utilities/Hooks/useLazyLoad';
+import clsx from "clsx";
 import Card from './CourseCard';
 import LazyCard from './LazyCard';
 
 const Courses = (props) => {
     const [ loader, setLoader ] = useState(true);
-    const { triggerRef, searchTerm, searchResults, handleChange } = props;
+    const { triggerRef, searchTerm, searchResults, handleEnroll } = props;
     const SHOW_PER_PAGE = 16;
     const TOTAL_PAGES = searchResults.length/16;   //152
 
@@ -31,7 +31,8 @@ const Courses = (props) => {
                 setLoader(false);
             }, 2000);
         }
-      }, [loader]);
+    }, [loader]);
+
     return (
         <>
             <div className="inside__courses">
@@ -57,8 +58,8 @@ const Courses = (props) => {
                                                 {
                                                     searchResults.length > 0 ?
                                                     searchResults.map((item, index) => (
-                                                        <Card key={index} item={item} handleChange={handleChange}/>
-                                                    )) : <div className="err"><h2>No Courses found!</h2></div>
+                                                        <Card key={index} item={item} handleEnroll={handleEnroll}/>
+                                                    )) : <div className="err"><h2>Only Pre-advised courses are available.</h2></div>
                                                 }
                                                 
                                             </div>

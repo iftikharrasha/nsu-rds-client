@@ -6,14 +6,12 @@ import crossIcon from '../../Image/cross-icon.svg';
 
 const CourseCard = (props) => {
     const { ID, Course, Checked, Capacity, Enrolled, Section, Time } = props.item;
-    const { handleChange } = props;
+    const { handleEnroll } = props;
     const [percentage, setPercentage] = useState(0);
 
     useEffect(() => {
         const percentLeft = Math.round(100 * Enrolled/Capacity);
-        // const percentageFilled = 100 - percentLeft;
         setPercentage(percentLeft);
-        // console.log("Course:", Course, percentageFilled);
     }, [Capacity, Enrolled])
 
     return (
@@ -45,7 +43,7 @@ const CourseCard = (props) => {
                     <div className="course__button">
                         {
                             Checked ? <button>Enrolled</button>
-                                    : <button onClick={() => handleChange(ID, Course)} disabled={Enrolled === Capacity} className={Enrolled === Capacity ? "disabled" : null}>Enroll</button>
+                                    : <button onClick={() => handleEnroll(ID, Course)} disabled={Enrolled === Capacity} className={Enrolled === Capacity ? "disabled" : null}>Enroll</button>
                         }
                         <Popup 
                             on='click'

@@ -1,18 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Image/logo.png';
 import avatar from '../../Image/avatar.jpg';
 import search from '../../Image/search-icon.svg';
-import fakeData from '../../Data/test.json';
+import fakeData from '../../Data/allcourses.json';
+import filter from '../../Data/filter.json';
 import Courses from './Courses';
 import EnrolledCourses from './EnrolledCourses';
 import TotalFees from './TotalFees';
-import toast, { Toaster } from 'react-hot-toast';
+import useTimer from '../../Utilities/Hooks/useTimer';
 
 const Hero = () => {
+    const {mints, seconds} = useTimer();
     const inputEl = useRef("");
     const [courses, setCourses] = useState(fakeData);
+    const [filterList, setFilterList] = useState(filter);
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [enrolledList, setEnrolledList] = useState([]);
@@ -20,7 +24,7 @@ const Hero = () => {
 
     useEffect(() => {
         function handleResize() {
-        setWindowWidth(window.innerWidth);
+            setWindowWidth(window.innerWidth);
         }
     
         window.addEventListener('resize', handleResize)
@@ -59,16 +63,30 @@ const Hero = () => {
         e.preventDefault();
     }
 
-    const getChecked = (e) => {
-        if(e.target.checked){
-            setSearchTerm(e.target.value);
-        }else{
-            setSearchTerm('');
-        }
-        // console.log(e.target.value);
+    const getChecked = (e, id) => {
+        const modifiedFilter = filter.map(item => {
+            if (id === item.id) {
+                item.checked = !item.checked;
+            }else{
+                if(item.checked){
+                    item.checked = false;
+                }
+                setSearchTerm('');
+            }
+        
+            if(e.target.checked){
+                setSearchTerm(e.target.value);
+            }else{
+                setSearchTerm('');
+            }
+
+            return item;
+        });
+        
+        setFilterList(modifiedFilter);
     }
 
-    const handleChange = (id, title) => {
+    const handleEnroll = (id, title) => {
         const loading = toast.loading('Please wait ...');
         const isEnrolled = enrolledList.find(item => item.Course === title);
         const copyCourses = [...courses];
@@ -131,11 +149,6 @@ const Hero = () => {
         setEnrolledList(modifiedEnrolled);
     }
 
-    // const handleReset = () => {
-    //     setEnrolledList([]);
-    //     setCourses(fakeData);
-    // }
-
     return (
             <>
                 <section className="hero" id="hero">
@@ -188,8 +201,24 @@ const Hero = () => {
                                     windowWidth < 575.98 ? 
                                     <div className="details__timer">
                                         <div className="timer__bg">
-                                            <h4>05:05</h4>
-                                            <span>minutes left</span>
+                                            <h4>
+                                                {
+                                                    mints < 10 && mints > 0 ? `0${mints}:` 
+                                                    : mints === 0 ? `00:`
+                                                    : `${mints}:` 
+                                                }
+                                                {
+                                                    seconds < 10 && seconds > 0 ? `0${seconds}` 
+                                                    : seconds < 0 || seconds === 0? '00'
+                                                    : seconds
+                                                }
+                                            </h4>
+                                            {
+                                                mints === 0 && seconds > 0 ? <span>seconds left</span> 
+                                                : mints === 1 && seconds === 0 ? <span>minute left</span>
+                                                : mints === 0 && seconds === 0 ? <span>Time Over!</span> 
+                                                : <span>minutes left</span>
+                                            }
                                         </div>
                                     </div> : ''
                                 }
@@ -208,81 +237,61 @@ const Hero = () => {
                                         <Accordion.Item eventKey="0">
                                             <Accordion.Header>Pre-Advised Courses</Accordion.Header>
                                             <Accordion.Body>
-                                                <div className="course">
-                                                    <input type="checkbox" id="CSE438" name="CSE438" value="CSE438" 
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="CSE438" className="ps-2">CSE438</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="MAT350" name="MAT350" value="MAT350"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="MAT350" className="ps-2">MAT350</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="ENG111" name="ENG111" value="ENG111"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="ENG111" className="ps-2">ENG111</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="POL101" name="POL101" value="POL101"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="POL101" className="ps-2">POL101</label>
-                                                </div>
+                                                {
+                                                    filterList.filter(item => item.type === "course").map(course => (
+                                                        <div className="course" key={course.id}>
+                                                            <input 
+                                                                type="checkbox"
+                                                                id={course.id}
+                                                                name={course.title}
+                                                                value={course.value} 
+                                                                checked={course.checked}
+                                                                onChange={(e) => getChecked(e, course.id)}
+                                                            />
+                                                            <label htmlFor={course.id} className="ps-2">{course.title}</label>
+                                                        </div>
+                                                    )) 
+                                                }
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="1">
                                             <Accordion.Header>Class Schedule</Accordion.Header>
                                             <Accordion.Body>
-                                                <div className="course">
-                                                    <input type="checkbox" id="mw" name="mw" value="mw"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="mw" className="ps-2">Monday-Wednesday (MW)</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="ra" name="ra" value="ra"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="ra" className="ps-2">Thursday-Saturday (RA)</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="st" name="st" value="st"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="st" className="ps-2">Sunday-Tuesday (ST)</label>
-                                                </div>
+                                                {
+                                                    filterList.filter(item => item.type === "day").map(course => (
+                                                        <div className="course" key={course.id}>
+                                                            <input 
+                                                                type="checkbox"
+                                                                id={course.id}
+                                                                name={course.title}
+                                                                value={course.value} 
+                                                                checked={course.checked}
+                                                                onChange={(e) => getChecked(e, course.id)}
+                                                            />
+                                                            <label htmlFor={course.id} className="ps-2">{course.title}</label>
+                                                        </div>
+                                                    )) 
+                                                }
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="2">
                                             <Accordion.Header>Preferred Time</Accordion.Header>
                                             <Accordion.Body>
-                                                <div className="course">
-                                                    <input type="checkbox" id="time1" name="time1" value="08:00 AM - 09:30 AM"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="time1" className="ps-2">08:00 AM - 09:30 AM</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="time2" name="time2" value="09:40 AM - 11:10 AM"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="time2" className="ps-2">09:40 AM - 11:10 AM</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="time3" name="time3" value="11:20 AM - 12:50 PM"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="time3" className="ps-2">11:20 AM - 12:50 PM</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="time4" name="time4" value="01:00 PM - 02:30 PM"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="time4" className="ps-2">01:00 PM - 02:30 PM</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="time5" name="time5" value="02:40 PM - 04:10 PM"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="time5" className="ps-2">02:40 PM - 04:10 PM</label>
-                                                </div>
-                                                <div className="course">
-                                                    <input type="checkbox" id="time6" name="time6" value="04:20 PM - 05:50 PM"
-                                                            onChange={getChecked}/>
-                                                    <label htmlFor="time6" className="ps-2">04:20 PM - 05:50 PM</label>
-                                                </div>
+                                                {
+                                                    filterList.filter(item => item.type === "time").map(course => (
+                                                        <div className="course" key={course.id}>
+                                                            <input 
+                                                                type="checkbox"
+                                                                id={course.id}
+                                                                name={course.title}
+                                                                value={course.value} 
+                                                                checked={course.checked}
+                                                                onChange={(e) => getChecked(e, course.id)}
+                                                            />
+                                                            <label htmlFor={course.id} className="ps-2">{course.title}</label>
+                                                        </div>
+                                                    )) 
+                                                }
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
@@ -334,7 +343,7 @@ const Hero = () => {
                                 })
                             } */}
 
-                            <Courses triggerRef={triggerRef} searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleChange={handleChange}/>
+                            <Courses triggerRef={triggerRef} searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleEnroll={handleEnroll}/>
 
                         </div>
 
@@ -355,8 +364,24 @@ const Hero = () => {
                                     windowWidth > 576 ? 
                                     <div className="details__timer">
                                         <div className="timer__bg">
-                                            <h4>05:05</h4>
-                                            <span>minutes left</span>
+                                            <h4>
+                                                {
+                                                    mints < 10 && mints > 0 ? `0${mints}:` 
+                                                    : mints === 0 ? `00:`
+                                                    : `${mints}:` 
+                                                }
+                                                {
+                                                    seconds < 10 && seconds > 0 ? `0${seconds}` 
+                                                    : seconds < 0 || seconds === 0? '00'
+                                                    : seconds
+                                                }
+                                            </h4>
+                                            {
+                                                mints === 0 && seconds > 0 ? <span>seconds left</span> 
+                                                : mints === 1 && seconds === 0 ? <span>minute left</span>
+                                                : mints === 0 && seconds === 0 ? <span>Time Over!</span> 
+                                                : <span>minutes left</span>
+                                            }
                                         </div>
                                     </div> : ''
                                 }

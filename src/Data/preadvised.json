@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "course": "CSE438",
+        "checked": false
+    },
+    {
+        "id": "2",
+        "course": "CSE473",
+        "checked": false
+    },
+    {
+        "id": "3",
+        "course": "MAT350",
+        "checked": false
+    },
+    {
+        "id": "4",
+        "course": "ENG111",
+        "checked": false
+    },
+    {
+        "id": "5",
+        "course": "POL101",
+        "checked": false
+    }
+]

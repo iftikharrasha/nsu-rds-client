@@ -6,7 +6,8 @@
   --yellow: #F0AF4E;
   --blue: #537FE5;
   --red: #E55664;
-  --black: #000000;
+  --green: #a7e2d7;
+  --black: #121212;
 }
 
 .hero .wrapper {
@@ -132,8 +133,8 @@
 }
 
 .hero .wrapper .filter__items .filter__logo img {
-  width: 64px;
-  height: 79px;
+  width: 4rem;
+  height: auto;
 }
 
 @media (min-width: 576px) {
@@ -166,7 +167,6 @@
   color: var(--white);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  cursor: pointer;
 }
 
 .hero .wrapper .filter__items .filter__logo .details__timer .timer__bg:hover {
@@ -475,7 +475,7 @@
 }
 
 .hero .wrapper .inside__items .inside__courses {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 
 .hero .wrapper .inside__items .inside__courses .inside__top {
@@ -568,6 +568,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  text-align: center;
   min-height: 30rem;
 }
 
@@ -578,7 +579,6 @@
   margin-right: 1%;
   border-radius: 0.5rem;
   margin-bottom: 1%;
-  cursor: pointer;
 }
 
 @media (max-width: 575.98px) {
@@ -1046,7 +1046,6 @@
   color: var(--white);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  cursor: pointer;
 }
 
 .hero .wrapper .details__item .details__nav .details__timer .timer__bg:hover {
@@ -1094,7 +1093,6 @@
   padding: 1.5rem 1.25rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  cursor: pointer;
 }
 
 @media (max-width: 320px) {
@@ -1146,7 +1144,6 @@
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   color: var(--white);
-  cursor: pointer;
 }
 
 .hero .wrapper .details__item .details__nav .details__balance .balance__card:hover {
@@ -1298,10 +1295,18 @@
 .footer .copyright {
   padding: 2.5rem 0 2rem 0;
   text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
 }
 
-.footer .copyright a {
-  color: var(--blue);
+.footer .copyright p svg {
+  width: 10.5625rem;
+  height: auto;
+  fill: var(--black);
+}
+
+.footer .copyright p svg:hover {
+  fill: var(--darkblue);
 }
 
 .notFound {
@@ -1359,7 +1364,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 87vh;
   margin: auto;
 }
 
@@ -1369,8 +1377,9 @@
 }
 
 .loader h2 {
-  color: var(--white);
-  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--green);
+  font-size: 1rem;
 }
 
 * {
