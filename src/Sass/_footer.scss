@@ -23,7 +23,7 @@
         left: 0;
         right: 0;
         transition: bottom .2s ease-in-out;
-        background-color: $lagoon;
+        background-color: aliceblue;
         .sticky-contents{
             @include flexCenter;
             height: 4.5rem;
@@ -80,14 +80,6 @@
                         width: 100%;
                         font-size: 1rem;
                         padding: 0.5rem 2rem;
-                    }
-                    &:hover{
-                        background-color: $red;
-                        color: $white;
-                    }
-                    &:hover{
-                        background-color: $red;
-                        color: $white;
                     }
                 }
             }

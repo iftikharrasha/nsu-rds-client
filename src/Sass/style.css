@@ -328,6 +328,20 @@
   font-weight: 500;
 }
 
+.advisingWindow .wrapper .filter__items .inside__stats ul li i {
+  font-size: 0.85rem;
+  color: #4183c4;
+}
+
+.advisingWindow .wrapper .filter__items .inside__stats ul li:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  padding-right: 1rem;
+}
+
+.advisingWindow .wrapper .filter__items .inside__stats ul li:last-child {
+  padding-left: 1rem;
+}
+
 .advisingWindow .wrapper .filter__items .filter__lists {
   padding-top: 3rem;
 }
@@ -502,6 +516,20 @@
   font-size: 0.85rem;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.advisingWindow .wrapper .inside__items .inside__stats ul li i {
+  font-size: 0.85rem;
+  color: #4183c4;
+}
+
+.advisingWindow .wrapper .inside__items .inside__stats ul li:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  padding-right: 1rem;
+}
+
+.advisingWindow .wrapper .inside__items .inside__stats ul li:last-child {
+  padding-left: 1rem;
 }
 
 .advisingWindow .wrapper .inside__items .inside__courses {
@@ -682,7 +710,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--darkblue);
+  color: #4183c4;
 }
 
 .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .single__card .card-bottom {
@@ -827,6 +855,7 @@
 }
 
 .advisingWindow .wrapper .inside__items .inside__courses .inside__cards .enrolled .course__button button {
+  padding: 0.5rem !important;
   background-color: var(--blue) !important;
 }
 
@@ -1048,15 +1077,15 @@
 
 .advisingWindow .wrapper .details__item .details__nav .details__user .user__info h3 {
   font-family: "Poppins", sans-serif;
-  color: rgba(0, 0, 0, 0.5);
+  color: #4183c4;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .advisingWindow .wrapper .details__item .details__nav .details__user .user__info p {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .advisingWindow .wrapper .details__item .details__nav .details__timer {
@@ -1308,6 +1337,7 @@
 
 .hoveredCard .content .header {
   font-size: 1rem !important;
+  color: var(--darkblue) !important;
 }
 
 .hoveredCard .content .meta {
@@ -1320,17 +1350,51 @@
   width: 40% !important;
   margin: 0.5rem !important;
   font-family: "Poppins", sans-serif;
-  font-size: 0.75rem !important;
+  font-size: 0.85rem !important;
   border: 0;
   cursor: default;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--darkblue) !important;
 }
 
 .hoveredCard .content button span {
   font-size: 0.75rem !important;
+  font-weight: 500 !important;
 }
 
 .hoveredCard .extra {
   border-top: 1px solid black !important;
+}
+
+.detailsCard {
+  width: 100% !important;
+}
+
+.detailsCard .content .payable {
+  text-align: center;
+}
+
+.detailsCard .content .header {
+  font-size: 1.25rem !important;
+}
+
+.detailsCard .content .meta {
+  font-size: 0.85rem !important;
+  padding-bottom: 0 !important;
+}
+
+.detailsCard .table > :not(caption) > * > * {
+  border-bottom-width: 0;
+}
+
+.ui.modal {
+  background: rgba(0, 0, 0, 0) !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.modals.dimmer .ui.scrolling.modal {
+  position: relative;
 }
 
 .footer {
@@ -1362,7 +1426,7 @@
   right: 0;
   -webkit-transition: bottom .2s ease-in-out;
   transition: bottom .2s ease-in-out;
-  background-color: var(--lagoon);
+  background-color: aliceblue;
 }
 
 .footer .sticky-footer .sticky-contents {
@@ -1475,16 +1539,6 @@
     font-size: 1rem;
     padding: 0.5rem 2rem;
   }
-}
-
-.footer .sticky-footer .sticky-contents .sticky-right button:hover {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-.footer .sticky-footer .sticky-contents .sticky-right button:hover {
-  background-color: var(--red);
-  color: var(--white);
 }
 
 .footer .popup {

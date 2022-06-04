@@ -69,10 +69,10 @@ const CourseCard = (props) => {
                             </Card.Content>
                             <Card.Content extra>
                                 <div className='ui two buttons'>
-                                <Button basic color='grey'>
+                                <Button>
                                     Faculty <br /> <span>{Faculty}</span>
                                 </Button>
-                                <Button basic color='grey'>
+                                <Button>
                                     Room <br /> <span>{Room}</span>
                                 </Button>
                                 </div>

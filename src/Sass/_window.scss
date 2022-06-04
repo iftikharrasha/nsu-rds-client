@@ -160,6 +160,17 @@
                             font-size: 0.85rem;
                             font-weight: 500;
                         }
+                        i{
+                            font-size: 0.85rem;
+                            color: #4183c4;
+                        }
+                        &:first-child{
+                            border-right: 1px solid rgba(0,0,0,.125);
+                            padding-right: 1rem;
+                        }
+                        &:last-child{
+                            padding-left: 1rem;
+                        }
                     }
                 }
             }
@@ -273,6 +284,17 @@
                             font-weight: 500;
                             color: rgba(0, 0, 0, 0.5);
                         }
+                        i{
+                            font-size: 0.85rem;
+                            color: #4183c4;
+                        }
+                        &:first-child{
+                            border-right: 1px solid rgba(0,0,0,.125);
+                            padding-right: 1rem;
+                        }
+                        &:last-child{
+                            padding-left: 1rem;
+                        }
                     }
                 }
             }
@@ -376,7 +398,7 @@
                                 font-family: $ff1;
                                 font-size: 0.7rem;
                                 font-weight: 500;
-                                color: $darkblue;
+                                color: #4183c4;
                             }
                         }
                         .card-bottom{
@@ -477,6 +499,7 @@
                         .course__button{
                             @include flexCenter;
                             button{
+                                padding: 0.5rem !important;
                                 background-color: $blue !important;
                                 &:last-child{
                                     border: 1px solid rgba(0,0,0,0) !important;
@@ -650,14 +673,14 @@
                         text-align: right;
                         h3{
                             font-family: $ff1;
-                            color: rgba(0,0,0,0.5);
+                            color: #4183c4;
                             font-size: 0.95rem;
-                            font-weight: 500;
+                            font-weight: 400;
                         }
                         p{
                             font-family: $ff1;
                             font-size: 0.75rem;
-                            font-weight: 600;
+                            font-weight: 500;
                         }
                     }
                 }
@@ -857,6 +880,7 @@
         }
         .header{
             font-size: 1rem !important;
+            color: $darkblue !important;
         }
         .meta{
             font-size: 0.75rem !important;
@@ -867,15 +891,47 @@
             width: 40% !important;
             margin: 0.5rem !important;
             font-family: $ff1;
-            font-size: 0.75rem !important;
+            font-size: 0.85rem !important;
             border: 0;
             cursor: default;
+            background: rgba(255, 255, 255, 0.5);
+            color: $darkblue !important;
             span{
                 font-size: 0.75rem !important;
+                font-weight: 500 !important;
             }
         }
     }
     .extra{
         border-top: 1px solid rgba(0,0,0,1)!important;
     }
+}
+
+.detailsCard{
+    width: 100% !important;
+    .content{
+        .payable{
+            text-align: center;
+        }
+        
+        .header{
+            font-size: 1.25rem !important;
+        }
+        .meta{
+            font-size: 0.85rem !important;
+            padding-bottom: 0 !important;
+        }
+    }
+    .table>:not(caption)>*>*{
+        border-bottom-width: 0;
+    }
+}
+
+.ui.modal{
+    background: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+}
+
+.modals.dimmer .ui.scrolling.modal {
+    position: relative;
 }

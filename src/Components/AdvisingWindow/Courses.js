@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Card from './CourseCard';
 import LazyCard from './LazyCard';
 import search from '../../Image/search-icon.svg';
+import useTimer from '../../Utilities/Hooks/useTimer';
 
 const Courses = (props) => {
+    const {mints, seconds} = useTimer()
     const [ loader, setLoader ] = useState(true);
     const { searchResults, handleEnroll, handleSearch } = props;
 
@@ -19,7 +21,7 @@ const Courses = (props) => {
         <>
             <div className="inside__courses">
                 {
-                    loader ? <div className="inside__cards">
+                    loader ||  (mints === 0 && seconds === 0)  ? <div className="inside__cards">
                                 <LazyCard/>
                             </div>  : <>
                                         <div className="inside__top">

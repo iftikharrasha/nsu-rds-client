@@ -8,10 +8,8 @@ const Footer = () => {
     window.onscroll = (function () {
         if (window.scrollY > 175) {
             document.getElementById("sticky").classList.add("popup");
-            document.getElementById("sticky2").classList.add("popup2");
         } else {
             document.getElementById("sticky").classList.remove("popup");
-            document.getElementById("sticky2").classList.remove("popup2");
         }
     });
     

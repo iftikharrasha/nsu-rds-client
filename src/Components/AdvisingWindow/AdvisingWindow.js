@@ -21,6 +21,7 @@ const AdvisingWindow = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [enrolledList, setEnrolledList] = useState([]);
+    console.log(enrolledList);
 
     const navigations = [
         { key: 'Home', content: 'Home', link: true },
@@ -79,33 +80,30 @@ const AdvisingWindow = () => {
                 position: "top-center"
             });
         }else{
-            const modifiedCourses = copyCourses.map(course => {
-                if(enrolledList.length < 4){
+            if(enrolledList.length < 4){
+                const modifiedCourses = copyCourses.map(course => {
                     if (id === course.ID) {
                         course.Checked = !course.Checked;
                         course.Enrolled = course.Enrolled + 1;
                         enrolledList.push(course);
     
                         toast.dismiss(loading);
-                        toast.success("You've Successfully Enrolled!", {
+                        toast.success(`Successfully Enrolled to ${course.Course}.${course.Section}`, {
                             position: "top-center"
                         });
                     }
-                }
-            
-                return course;
-            });
-    
-            setCourses(modifiedCourses);
-        }
-        
+                
+                    return course;
+                });
 
-        if(enrolledList.length >= 4){
-            toast.dismiss(loading);
-            toast.error("Max course enrollment reached!", {
-                icon: '⏳',
-                position: "top-center"
-            });
+                setCourses(modifiedCourses);
+            }else{
+                toast.dismiss(loading);
+                toast.error("Max course enrollment reached!", {
+                    icon: '⏳',
+                    position: "top-center"
+                });
+            }
         }
     };
 
@@ -119,7 +117,7 @@ const AdvisingWindow = () => {
                 course.Enrolled = course.Enrolled - 1;
 
                 toast.dismiss(loading);
-                toast.success("You've Removed the course!", {
+                toast.success(`You've Removed ${course.Course}.${course.Section}`, {
                     position: "top-center"
                 });
             }
@@ -199,13 +197,13 @@ const AdvisingWindow = () => {
                                         </div>
                                         <div className="inside__stats">
                                             <ul>
-                                                <li><i className="fa fa-search"></i></li>
+                                                <li><i className="bookmark icon"></i></li>
                                                 <li>
-                                                    <p>118 Credits Completed</p>
+                                                    <p>112 Credits Completed</p>
                                                 </li>
                                             </ul>
                                             <ul>
-                                                <li><i className="fa fa-search"></i></li>
+                                                <li><i className="trophy icon"></i></li>
                                                 <li>
                                                     <p>CGPA: 3.01</p>
                                                 </li>
@@ -296,13 +294,13 @@ const AdvisingWindow = () => {
                                     </div>
                                     <div className="inside__stats">
                                         <ul>
-                                            <li><i className="fa fa-search"></i></li>
+                                            <li><i className="bookmark icon"></i></li>
                                             <li>
-                                                <p>118 Credits Completed</p>
+                                                <p>112 Credits Completed</p>
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li><i className="fa fa-search"></i></li>
+                                            <li><i className="trophy icon"></i></li>
                                             <li>
                                                 <p>CGPA: 3.01</p>
                                             </li>
@@ -356,7 +354,7 @@ const AdvisingWindow = () => {
 
                                 <EnrolledCourses handleRemove={handleRemove} enrolledList={enrolledList}/>
                                 
-                                <TotalFees length={enrolledList.length}/>
+                                <TotalFees enrolledList={enrolledList}/>
                             </div>
                         </aside>
                     </div>
