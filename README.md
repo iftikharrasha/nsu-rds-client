@@ -1,2 +1,2 @@
 # nsu-rds-client
-### Custom lazyload
+### Custom hook implementation/pre redux system
