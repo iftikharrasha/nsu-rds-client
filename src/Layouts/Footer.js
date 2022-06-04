@@ -1,9 +1,52 @@
 import React from 'react';
+import arrow from '../Image/arrow.svg';
+import useTimer from '../Utilities/Hooks/useTimer';
 
 const Footer = () => {
+    const {mints, seconds} = useTimer();
+
+    window.onscroll = (function () {
+        if (window.scrollY > 175) {
+            document.getElementById("sticky").classList.add("popup");
+            document.getElementById("sticky2").classList.add("popup2");
+        } else {
+            document.getElementById("sticky").classList.remove("popup");
+            document.getElementById("sticky2").classList.remove("popup2");
+        }
+    });
+    
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     return (
         <>
             <footer className="footer">
+                <div className="sticky-footer" id="sticky">
+                    <div className="wrapper">
+                        <div className="sticky-contents">
+                            <div className="sticky-right">
+                                <button type="button" className={mints === 0 && seconds === 0 ? null : "pulse"}>
+                                    <i className="history icon" onClick={topFunction}></i>
+                                    {
+                                        mints < 10 && mints > 0 ? `0${mints}:` 
+                                        : mints === 0 ? `00:`
+                                        : `${mints}:` 
+                                    }
+                                    {
+                                        seconds < 10 && seconds > 0 ? `0${seconds}` 
+                                        : seconds < 0 || seconds === 0? '00'
+                                        : seconds
+                                    }
+                                </button>
+                            </div>
+                            <div className="sticky-left" onClick={topFunction}>
+                                <p>Back To Top</p>
+                                <img src={arrow} alt="arrow" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="wrapper">
                     <div className="copyright">
                         <p>Developed for fun by <br />

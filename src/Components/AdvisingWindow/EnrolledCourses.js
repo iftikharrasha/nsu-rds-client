@@ -1,9 +1,23 @@
 import React from 'react';
 import trash from '../../Image/trash.svg';
+import useWindowSize from '../../Utilities/Hooks/useWindowSize';
+import avatar from '../../Image/avatar.jpg';
 
 const EnrolledCourses = ({enrolledList, handleRemove}) => {
+    const {windowWidth} = useWindowSize();
+
     return (
         <>
+            {
+                windowWidth < 575.98 ? 
+                <div className="details__user">
+                    <div className="user__info">
+                        <h3>Iftikhar Rasha</h3>
+                        <p>1620221042</p>
+                    </div>
+                    <img src={avatar} alt="avatar" />
+                </div> : ''
+            }
             <div className="details__enrolled">
                 <h2>Enrolled Courses</h2>
                 <div className="enrolled__cards">

@@ -10,12 +10,12 @@
             cursor: pointer;
             position: fixed;
             right: 1.5rem;
-            bottom: 1.5rem;
+            bottom: 0.75rem;
             width: 3rem;
             height: 3rem;
             padding: 1rem 0.5rem;
             border-radius: 50%;
-            background-color: $red;
+            background-color: $blue;
             z-index: 9000;
             @include flexCenter;
             flex-direction: column;
@@ -54,13 +54,14 @@
             width: 16%;
             margin: 2rem 0;
             @media (max-width: 991.98px) {
+                margin-top: 1rem;
                 width: 100%;
             }
             @media (min-width: 992px) and (max-width: 1199.98px) {
                 width: 20%;
             }
             .filter__logo{
-                @media (max-width: 575.98px) {
+                @media (max-width: 991.98px){
                     padding-top: 1.25rem;
                     @include flexCenter;
                 }
@@ -100,10 +101,16 @@
                         }
                     }
                 }
+                .smNav{
+                    width: 60%;
+                }
             }
             .inside__nav{
                 padding: 1rem 0 0 0;
-                @media (min-width: 576px) {
+                @media (max-width: 991.98px) {
+                    padding:0;
+                }
+                @media (min-width: 992px) {
                     display: none;
                 }
                 nav{
@@ -141,7 +148,7 @@
             }
             .inside__stats{
                 padding: 1rem 0;
-                @media (min-width: 576px) {
+                @media (min-width: 992px) {
                     display: none;
                 }
                 @include flexCenter;
@@ -162,40 +169,8 @@
                     font-family: $ff1;
                     font-weight: 600;
                 }
-                .filter__ul{
-                    @include flexCenter;
-                    padding: 1.5rem 0; 
-                    @media (max-width: 575.98px) {
-                        width: 60%;
-                    }
-                    @media (min-width: 576px) and (max-width: 991.98px) {
-                        width: 40%;
-                    }
-                    li{
-                        border-right: 2px solid rgba(0,0,0,.125);
-                        padding-right: 1.25rem;
-                        img{
-                            width: 1rem;
-                            height: auto;
-                        }
-                        input{
-                            font-family: $ff1;
-                            border: 1px solid rgba(255, 255, 255, 0);
-                            border-bottom: 1px solid rgba(0,0,0,.125);
-                            width: 100%;
-                            font-size: 0.85rem;
-                            padding: 0.125rem 0.25rem;
-                            text-transform: uppercase;
-                            letter-spacing: 0.025rem;
-                        }
-                        &:last-child{
-                            width: 75%;
-                            border-right: none;
-                            padding-right: 0;
-                        }
-                    }
-                }
                 .filter__accordian{
+                    padding-top: 1.5rem;
                     .accordion-body {
                         padding-top: 0.5rem;
                     }
@@ -292,13 +267,11 @@
                 ul{
                     @include flexCenter;
                     li{
-                        i{
-
-                        }
                         p{
                             font-family: $ff1;
                             font-size: 0.85rem;
                             font-weight: 500;
+                            color: rgba(0, 0, 0, 0.5);
                         }
                     }
                 }
@@ -311,34 +284,36 @@
                         font-family: $ff1;
                         font-weight: 600;
                     }
-                    ul{
+                    .filter__ul{
                         @include flexCenter;
-                        font-size: 0.85rem;
-                        font-weight: 500;
-                        color: $blue;
+                        justify-content: flex-end;
                         margin-right: 1%;
+                        @media (max-width: 575.98px) {
+                            width: 60%;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {
+                            width: 40%;
+                        }
                         li{
-                            border-right: 2px solid rgba(0,0,0,.125);
-                            padding-right: 1.25rem;
-                            font-weight: 500;
-                            font-size: 0.75rem;
-                            color: gray;
-                            p{
-                                font-family: $ff1;
-                                font-family: $ff1;
+                            padding-right: 0.5rem;
+                            img{
+                                width: 1rem;
+                                height: auto;
                             }
-                            select{
+                            input{
                                 font-family: $ff1;
-                                border: 1px solid rgba(0,0,0,.125);
+                                border: 1px solid rgba(255, 255, 255, 0);
+                                border-bottom: 1px solid rgba(0,0,0,.125);
                                 width: 100%;
+                                font-size: 0.85rem;
                                 padding: 0.125rem 0.25rem;
                                 text-transform: uppercase;
-                                cursor: pointer;
+                                letter-spacing: 0.025rem;
                             }
                             &:last-child{
+                                width: 75%;
                                 border-right: none;
                                 padding-right: 0;
-                                padding-left: 1.25rem;
                             }
                         }
                     }
@@ -367,6 +342,7 @@
                             width: 48%;
                             margin-right: 2%;
                             margin-bottom: 2%;
+                            padding: 1rem;
                         }
                         @media (min-width: 576px) and (max-width: 991.98px) {
                             width: 48%;
@@ -659,7 +635,7 @@
                     width: 60%;
                     background: $white;
                     height: 100vh;
-                    padding: 2rem 1rem;
+                    padding: 1rem;
                 }
                 .details__user{
                     @include flexCenter;

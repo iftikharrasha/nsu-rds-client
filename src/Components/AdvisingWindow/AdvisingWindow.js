@@ -4,7 +4,6 @@ import { Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Image/logo.png';
 import avatar from '../../Image/avatar.jpg';
-import search from '../../Image/search-icon.svg';
 import preAdvised from '../../Data/preadvised.json';
 import filter from '../../Data/filter.json';
 import Courses from './Courses';
@@ -12,9 +11,11 @@ import TotalFees from './TotalFees';
 import EnrolledCourses from './EnrolledCourses';
 import useTimer from '../../Utilities/Hooks/useTimer';
 import { Breadcrumb } from 'semantic-ui-react';
+import useWindowSize from '../../Utilities/Hooks/useWindowSize';
 
 const AdvisingWindow = () => {
     const {mints, seconds} = useTimer();
+    const {windowWidth} = useWindowSize();
     const [courses, setCourses] = useState(preAdvised);
     const [filterList, setFilterList] = useState(filter);
     const [searchTerm, setSearchTerm] = useState("");
@@ -29,13 +30,6 @@ const AdvisingWindow = () => {
     ]
 
     useEffect(() => {
-        function handleResize() {
-            setWindowWidth(window.innerWidth);
-        }
-        window.addEventListener('resize', handleResize)
-    }, [])
-
-    useEffect(() => {
         if (searchTerm !== "") {
             const newCourseList = courses.filter((Course) => {
                 return ((Course.Course.toLowerCase().includes(searchTerm.toLowerCase())) || (Course.Time.toUpperCase().includes(searchTerm.toUpperCase())));
@@ -45,8 +39,6 @@ const AdvisingWindow = () => {
           setSearchResults(courses);
         }
     }, [searchTerm, courses])
-
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const activeToggle = e => {
         document.getElementById('advisingWindow').classList.toggle('nav__open');
@@ -140,6 +132,10 @@ const AdvisingWindow = () => {
         setEnrolledList(modifiedEnrolled);
     }
 
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value)
+    }
+
     return (
             <>
                 <section className="advisingWindow" id="advisingWindow">
@@ -160,20 +156,6 @@ const AdvisingWindow = () => {
                                             <Link to="/">Logout</Link>
                                         </nav>
                                     </div>
-                                    <div className="inside__stats">
-                                        <ul>
-                                            <li><i className="fa fa-search"></i></li>
-                                            <li>
-                                                <p>69 Credits Completed</p>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li><i className="fa fa-search"></i></li>
-                                            <li>
-                                                <p>CGPA: 3.01</p>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </> : ''
                             }
 
@@ -184,7 +166,7 @@ const AdvisingWindow = () => {
                                 {
                                     windowWidth < 575.98 ? 
                                     <div className="details__timer">
-                                        <div className="timer__bg">
+                                        <div className={mints === 0 && seconds === 0 ? "timer__bg" : "timer__bg pulse"}>
                                             <h4>
                                                 {
                                                     mints < 10 && mints > 0 ? `0${mints}:` 
@@ -206,18 +188,37 @@ const AdvisingWindow = () => {
                                         </div>
                                     </div> : ''
                                 }
+                                {
+                                    windowWidth < 991.98 && windowWidth > 576 ? 
+                                    <div className="smNav">
+                                        <div className="inside__nav">
+                                            <nav>
+                                                <Breadcrumb icon='right angle' sections={navigations} />
+                                                <Link to="/">Logout</Link>
+                                            </nav>
+                                        </div>
+                                        <div className="inside__stats">
+                                            <ul>
+                                                <li><i className="fa fa-search"></i></li>
+                                                <li>
+                                                    <p>118 Credits Completed</p>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li><i className="fa fa-search"></i></li>
+                                                <li>
+                                                    <p>CGPA: 3.01</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> : ''
+                                }
                             </div>
 
                             <div className="filter__lists">
                                 <h2>Filter</h2>
-                                <ul className="filter__ul">
-                                    <li><img src={search} alt={search} /></li>
-                                    <li>
-                                        <input type="text" placeholder="Search" value={searchTerm} onChange={event => setSearchTerm(event.target.value)}/>
-                                    </li>
-                                </ul>
                                 <div className="filter__accordian">
-                                    <Accordion defaultActiveKey={['0', '1', '2']} alwaysOpen>
+                                    <Accordion defaultActiveKey={windowWidth < 991.98 ? [] : ['0', '1', '2']} alwaysOpen>
                                         <Accordion.Item eventKey="0">
                                             <Accordion.Header>Pre-Advised Courses</Accordion.Header>
                                             <Accordion.Body>
@@ -310,7 +311,7 @@ const AdvisingWindow = () => {
                                 </> : ''
                             }
 
-                            <Courses searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleEnroll={handleEnroll}/>
+                            <Courses searchTerm={searchTerm} searchResults={searchTerm.length < 1 ? courses : searchResults} handleEnroll={handleEnroll} handleSearch={handleSearch}/>
 
                         </div>
 
@@ -330,7 +331,7 @@ const AdvisingWindow = () => {
                                 {
                                     windowWidth > 576 ? 
                                     <div className="details__timer">
-                                        <div className="timer__bg">
+                                        <div className={mints === 0 && seconds === 0 ? "timer__bg" : "timer__bg pulse"}>
                                             <h4>
                                                 {
                                                     mints < 10 && mints > 0 ? `0${mints}:` 

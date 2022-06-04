@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Card from './CourseCard';
 import LazyCard from './LazyCard';
+import search from '../../Image/search-icon.svg';
 
 const Courses = (props) => {
     const [ loader, setLoader ] = useState(true);
-    const { searchResults, handleEnroll } = props;
+    const { searchResults, handleEnroll, handleSearch } = props;
 
     useEffect(() => {
         if (loader) {
@@ -23,14 +24,10 @@ const Courses = (props) => {
                             </div>  : <>
                                         <div className="inside__top">
                                             <h2>Courses</h2>
-                                            <ul>
-                                                <li><p>Sort By</p></li>
+                                            <ul className="filter__ul">
+                                                <li><img src={search} alt={search} /></li>
                                                 <li>
-                                                    <select name="" id="">
-                                                        <option value="">Seats Available</option>
-                                                        <option value="">Time Schedule</option>
-                                                        <option value="">Section Name</option>
-                                                    </select>
+                                                    <input type="text" placeholder="Search" onChange={(e) => handleSearch(e)}/>
                                                 </li>
                                             </ul>
                                         </div>

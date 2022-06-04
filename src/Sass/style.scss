@@ -114,3 +114,21 @@ a, select , input , textarea , button{
         max-width: 100rem;
     }
 }
+
+.pulse{
+    animation: borderPulse 1000ms infinite ease-out;
+}
+
+@keyframes borderPulse {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+        box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1);
+      transform: scale(0.98);
+    }
+    100% {
+        box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255,.2), 0px 0px 0px 10px rgba(255,255,255,0);
+        transform: scale(1);
+    }
+}
